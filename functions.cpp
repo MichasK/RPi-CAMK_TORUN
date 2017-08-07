@@ -235,30 +235,26 @@ int PhotoEditor (Picture &picture1, OutputData &output)
 
     }
 Point Hough_Center(Picture &picture1,OutputData &output)
-    {
-                    vector<Vec3f> circles;
-                    HoughCircles(picture1.bin_image,circles,CV_HOUGH_GRADIENT,1,picture1.image.rows,200,5,15,3*(picture1.right_down_corner.x-picture1.left_up_corner.x)/2);
-                    if(circles.size()==0)
-                        {
-                            return output.result_center;
-                        }
-                    for(size_t i=0; i<circles.size(); i++)
-                        {
-                        Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));
-                        if(center.x<picture1.left_up_corner.x || center.x>picture1.right_down_corner.x ||
-                            center.y<picture1.left_up_corner.y || center.y>picture1.right_down_corner.y)
-                            {
-                                center.x=0;
-                                center.y=0;
-                                return output.result_center;
-                            }
-                        else
-                            {
 
-                            }
-                            return center;
-                        }
+    {
+        Point center;
+        vector<Vec3f> circles;
+        HoughCircles(picture1.bin_image,circles,CV_HOUGH_GRADIENT,1,picture1.image.rows,200,5,15,3*(picture1.right_down_corner.x-picture1.left_up_corner.x)/2);
+        if(circles.size()==0)
+            {
+                return output.result_center;
+            }
+        center.x=circles[0][0];
+        center.y=circles[0][1];
+        if(center.x<picture1.left_up_corner.x || center.x>picture1.right_down_corner.x ||
+        center.y<picture1.left_up_corner.y || center.y>picture1.right_down_corner.y)
+            {
+                return output.result_center;
+            }
+        return center;
+
     }
+
 ostream &operator<<(ostream &out, Picture &picture1)
 
     {

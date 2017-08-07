@@ -59,10 +59,11 @@ int main(int argc, char *argv[])
                                     }
                                     output.vector_error = output.result_center - config.slit_center;
                                     output.norm_of_vector_error = cv::norm(output.vector_error);
+                                    cout<<output.result_center<<endl;
                             }
                         }
                     i += 1;
-
+                    //cout<<picture1;
                 }
         return 0;
     }

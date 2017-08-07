@@ -1,0 +1,2 @@
+You set up a error treshold to: 10.5
+Slit data are downloaded from: dane.config

@@ -5,16 +5,15 @@
     #include <opencv/cv.hpp>
     #include <iostream>
     #include <vector>
-    #include <math.h>
-    #include <numeric>
-    #include <fstream>
-    /*#include "Includes.h"
-    #include "Picture.h"
-    #include "OutputData.h"
-    #include "Configuration.h"*/
+    #include <math.h>//stdev
+    #include <numeric>//for nth_element
+    #include <fstream>//for configuration_file
+
     class Configuration;
     class OutputData;
     class Picture;
+
+
     using namespace std;
     using namespace cv;
 

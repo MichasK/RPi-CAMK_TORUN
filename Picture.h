@@ -1,5 +1,6 @@
 #ifndef Picture_h
 #define Picture_h
+
 #include <opencv/cv.hpp>
 #include <vector>
 class Picture
@@ -33,4 +34,5 @@ class Picture
         friend void Rectangle(Picture &picture1,vector<int> bin_array,Point &result_center);
         friend Point WeightedCenter(Picture &picture1,OutputData &output);
     };
+    
 #endif
