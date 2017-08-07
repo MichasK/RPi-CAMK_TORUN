@@ -60,7 +60,7 @@ double TreshHold (double standard_deviation, double median)
 
     {
 
-        return median + (5 * standard_deviation);
+        return median + (6 * standard_deviation);
 
     }
 
@@ -92,12 +92,8 @@ void Rectangle (Mat &image, vector<short int> bin_array, Point &left_up_corner, 
         rectangle_center.y = left_up_corner.y + (maxrows-minrows)/2;
         //cv::rectangle(image,left_up_corner,right_down_corner,Scalar(0,224,221),3);
     }
-/* dostaje ona domyślnie plik ktory jest generowany przy pomocy skryptu o następujacej budowie
-*   1.x cord of slit_center
-*   2.y cord of slit_center
-*   3.If user want to show images
-*   4.If uset want to show in stdin centers coords
-*
+/* Funkcja z pliku konfiguracyjnego czyta współrzedne środka szczeliny
+*  i zapisuje je do klasy przechowującej ustawienia programu.
 */
 void set_config (Configuration &config)
     {
@@ -107,8 +103,8 @@ void set_config (Configuration &config)
         string delimiter="=";
         if(!input.good())
             {
-                cout<<"I did not open the file"<<endl;
-                return ;
+                cout<<"I did not open the configuration file"<<endl;
+                return;
             }
         string tmp;
         int i=0;
@@ -120,18 +116,16 @@ void set_config (Configuration &config)
             }
         tab_of_lines[0]=tab_of_lines[0].substr(tab_of_lines[0].find(delimiter)+1,tab_of_lines[0].length());
         tab_of_lines[1]=tab_of_lines[1].substr(tab_of_lines[1].find(delimiter)+1,tab_of_lines[1].length());
-        config.x_slit_center=atoi(tab_of_lines[0].c_str());
-        config.y_slit_center=atoi(tab_of_lines[1].c_str());
-
+        config.slit_center.x=atoi(tab_of_lines[0].c_str());
+        config.slit_center.y=atoi(tab_of_lines[1].c_str());
+        return;
     }
-
 /*
- *        Funkcja dostaje na wejsciu liczbę wywołania argumentów programu oraz tablicę z ich nazwami.
- *        Szuka ona opcji -C lub -c i  jeżeli następny argument istnieje i można go otworzyć
- *        ustawia docelowo jako nazwę pliku konfiguracyjnego. Jeżeli po opcji -c nie podamy nic lub nie wywołamy -c  lub plik configuracyjny
- *        nie istnieje wtedy ustawa defaultowe dane. Znaleziona nazwe pliku konfiguracyjnego zapisuje w klasie Configuration
- *
- */
+ *        Funkcja dostaje na wejsciu argc, tablice argv[], oraz klasę, zawierającą ustawienia programu:
+ *        -c nazwa_pliku_configuracyjnego (w nim współrzędne środka szczeliny)
+ *        -m (metoda obliczenia środka defaultowo jako średnia arytmetyczna)
+ *        -e [float] (odleglość powyżej której stwierdzamy błąd i szukamy wektora translacji)
+*/
 void Search_Config(int argc, char* argv[], Configuration &config)
     {
         for (int i=1; i<argc; i++)
@@ -163,11 +157,20 @@ void Search_Config(int argc, char* argv[], Configuration &config)
                                         config.metod='a';
                                     }
                             }
-
+                        if(argv[i][1]=='E' || argv[i][1]=='e')
+                            {
+                                if(i < (argc-1))
+                                    {
+                                        config.error_treshold=atof(argv[i+1]);
+                                    }
+                                else
+                                    {
+                                        config.error_treshold=7.5;
+                                    }
+                            }
                     }
-
             }
-        return ;
+        return;
     }
 /*
  * Funkcja jako parametr otrzymuje nazwę pliku szuka ostatniej kropki i sprawdza czy napis jest identyczny z
@@ -182,7 +185,7 @@ bool IsPhoto (string file_name)
         else
             return false;
     }
-/*Funkcja dostaje na wejściu obiekt zdjęcie wkonuje na nim operację filtru medianowego, następnie konwetuje
+/*Funkcja dostaje na wejściu obiekt zdjęcie wkonuje na nim operację filtru medianowego, następnie konwertuje
  * w skalę szarości,nakłada filt gausowski,oraz wykonuje binaryzację i ponowny filtr medianowy, w kolejnych
  * etapach dane obrazu zapisuje do odpowiednich wektorow reprezentujących te obrazy
  */
@@ -235,7 +238,7 @@ void Hough_Center(Picture &picture1,OutputData &output)
                             {
                                 output.hough_center.x=center.x;
                                 output.hough_center.y=center.y;
-                                int radius=cvRound(circles[i][2]);
+                                //int radius=cvRound(circles[i][2]);
                                 //circle( picture1.image, center, 1, Scalar(0,255,0), -1, 8, 0 );
                                 //circle( picture1.image, center, radius, Scalar(0,0,255), 3, 8, 0 );
                             }
@@ -289,5 +292,5 @@ void WeightedCenter(Picture &picture1,OutputData &output)
                 }
                 output.weighted_center.x += picture1.left_up_corner.x + Mx -1 ;
                 output.weighted_center.y += picture1.left_up_corner.y + My-1;
-                circle( picture1.image, output.weighted_center, 1, Scalar(255,20,147), -1, 8, 0 );
+                circle(picture1.image, output.weighted_center, 1, Scalar(255,20,147), -1, 8, 0);
     }

@@ -45,7 +45,6 @@
             friend void Rectangle(Picture &picture1,vector<int> bin_array,Point &rectangle_center);
             friend void WeightedCenter(Picture &picture1,OutputData &output);
             friend void LightSpotField(Picture &picture1);
-
         };
 class OutputData
     {
@@ -53,6 +52,8 @@ class OutputData
         Point hough_center;
         Point rectangle_center;
         Point weighted_center;
+        Point vector_error; //srodek znalezionego srodka - srodek szczeliny
+        float norm_of_vector_error;
     public:
         friend ostream &operator<<(ostream &out, OutputData &output);
         friend void Rectangle(Mat &image,Point &left_up_corner, Point &right_down_corner,Point &rectangle_center);
@@ -65,20 +66,13 @@ class Configuration
     {
     public:
         string config_file_name;
-        int x_slit_center;
-        int y_slit_center;
+        Point slit_center;
         char metod;//w-weighted , h-houghtransform , r-rectanglecenter, a-default srednia z wszystkich
-        void set_config(Configuration &config);
-    };
-class DescribingRectangle
-
-    {
-    private:
-        Point left_up_corner;
-        Point right_down_corner;
-        float diagonal;
-
+        float error_treshold;/* jeżeli odległość znalezionego środka od środka szczeliny
+                            jest większa od wartości tresholdu błedu to uważamy że
+                            jest to nieprawidłowe i przesyłamy wektor translacji*/
     };
 bool IsPhoto(string file_name);
 void Search_Config(int argc,char* argv[],Configuration &config);
+void set_config(Configuration &config);
 #endif
