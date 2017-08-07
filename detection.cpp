@@ -1,6 +1,7 @@
-#include "opencv2/highgui/highgui.hpp"
-#include "opencv2/imgproc/imgproc.hpp"
-#include "functions.h"
+#include "Includes.h"
+#include "Picture.h"
+#include "OutputData.h"
+#include "Configuration.h"
 /*  1. Znalezienie pliku konfiguracyjnego.
     2. Ustawienie danych zawartych w pliku konfiguracyjnym
     3. Glowna petla programu dzialajaca dla wszystkich argumentow wywolania programu
@@ -69,7 +70,7 @@ int main(int argc, char *argv[])
                             }
                         }
                     i += 1;
-                    
+
                 }
         return 0;
     }

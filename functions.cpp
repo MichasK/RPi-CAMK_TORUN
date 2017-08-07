@@ -1,4 +1,7 @@
-#include "functions.h"
+#include "Includes.h"
+#include "Picture.h"
+#include "OutputData.h"
+#include "Configuration.h"
 /*
 Funkcja konwertuje obraz w skali szarosci do tablicy jednowymiarowej wiersz po wierszu
 */
