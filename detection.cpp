@@ -17,11 +17,12 @@
     7. Obliczenie srodka wazonego.
 */
 int main(int argc, char *argv[])
-    {   int i=1;
+    {
         Configuration config;
         Search_Config(argc,argv,config);
         set_config(config);
-        while(i < argc)
+        int i=1;
+            while(i < argc)
                 {
                     Picture picture1;
                     OutputData output;
@@ -37,36 +38,27 @@ int main(int argc, char *argv[])
                             {
                                 if(config.metod=='h')
                                     {
-                                        cout<<"Wybrales Hough_Center"<<endl;
-                                        Hough_Center(picture1,output);
-                                        output.vector_error = output.hough_center - config.slit_center;
-                                        output.norm_of_vector_error = cv::norm(output.vector_error);
+                                        output.result_center=Hough_Center(picture1,output);
 
                                     }
                                 if(config.metod=='w')
                                     {
-                                        cout<<"Wybrales Srodek Wazony"<<endl;
-                                        WeightedCenter(picture1,output);
-                                        output.vector_error = output.weighted_center - config.slit_center;
-                                        output.norm_of_vector_error = cv::norm(output.vector_error);
+                                        output.result_center=WeightedCenter(picture1,output);
 
                                     }
                                 if(config.metod=='r')
                                     {
-                                        cout<<"Wybrales srodek prostokata"<<endl;
-                                        output.vector_error = output.rectangle_center - config.slit_center;
-                                        output.norm_of_vector_error = cv::norm(output.vector_error);
-
+                                        //defaultowo ustawiony srodek to srodek prostokata
                                     }
                                 if(config.metod=='a')
                                     {
-                                        cout<<"Wybrales arytmetyczny"<<endl;
-                                        WeightedCenter(picture1,output);
-                                        Hough_Center(picture1,output);
-                                        output.weighted_center = (output.weighted_center + output.rectangle_center + output.hough_center)/3;
-                                        output.vector_error = output.weighted_center - config.slit_center;
-                                        output.norm_of_vector_error = cv::norm(output.vector_error);
+                                        Point Hough=Hough_Center(picture1,output);
+                                        Point Weighted=WeightedCenter(picture1,output);
+                                        output.result_center += Weighted + Hough;
+                                        output.result_center /= 3;
                                     }
+                                    output.vector_error = output.result_center - config.slit_center;
+                                    output.norm_of_vector_error = cv::norm(output.vector_error);
                             }
                         }
                     i += 1;

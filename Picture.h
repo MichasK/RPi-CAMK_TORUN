@@ -28,10 +28,9 @@ class Picture
         friend double Average(vector<short int> &);
         friend double StandardDeviation(vector<short int> &, double);
         friend double TreshHold(double, double);
-        friend void Hough_Center(Picture &picture1,OutputData &output);
+        friend Point Hough_Center(Picture &picture1,OutputData &output);
         friend int PhotoEditor(Picture &picture1,OutputData &output);
-        friend void Rectangle(Picture &picture1,vector<int> bin_array,Point &rectangle_center);
-        friend void WeightedCenter(Picture &picture1,OutputData &output);
-        friend void LightSpotField(Picture &picture1);
+        friend void Rectangle(Picture &picture1,vector<int> bin_array,Point &result_center);
+        friend Point WeightedCenter(Picture &picture1,OutputData &output);
     };
 #endif

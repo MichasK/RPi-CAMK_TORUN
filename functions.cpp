@@ -2,9 +2,12 @@
 #include "Picture.h"
 #include "OutputData.h"
 #include "Configuration.h"
+
+
 /*
-Funkcja konwertuje obraz w skali szarosci do tablicy jednowymiarowej wiersz po wierszu
+Funkcja konwertuje obraz w skali szarosci do tablicy jednowymiarowej wiersz po wierszu.
 */
+
 void MatToVector (vector<short int> &array, Mat &image)
 
     {
@@ -21,6 +24,11 @@ void MatToVector (vector<short int> &array, Mat &image)
             }
     }
 
+/*
+    Obliczanie mediany z danych zawartych w wektorze z wykorzystaniem
+    nth_element [#include <numeric>]. Nie sprawdzam parzystosci i nieparzystosci
+    dlugosci wektora poniewaz mowiono ze i tak nie bd miec to kolosalnej roznicy
+*/
 
 double Median (vector<short int> &array)
 
@@ -39,9 +47,9 @@ double Average (vector<short int> &array)
         double sum=0.0;
         for (unsigned int i=0; i<array.size(); i++)
             {
-                sum += array[i];
+                sum += array[i] / array.size();
             }
-        return sum / array.size();
+        return sum ;
     }
 
 
@@ -68,7 +76,7 @@ double TreshHold (double standard_deviation, double median)
     }
 
 ///!!!! optymalizuj!!!!/////////
-void Rectangle (Mat &image, vector<short int> bin_array, Point &left_up_corner, Point &right_down_corner, Point &rectangle_center)
+void Rectangle (Mat &image, vector<short int> bin_array, Point &left_up_corner, Point &right_down_corner, Point &result_center)
 
     {
         unsigned int minrows = 0;
@@ -91,9 +99,9 @@ void Rectangle (Mat &image, vector<short int> bin_array, Point &left_up_corner, 
         left_up_corner.y = minrows;
         right_down_corner.x = maxcols;
         right_down_corner.y = maxrows;
-        rectangle_center.x = left_up_corner.x + (maxcols-mincols)/2;
-        rectangle_center.y = left_up_corner.y + (maxrows-minrows)/2;
-        //cv::rectangle(image,left_up_corner,right_down_corner,Scalar(0,224,221),3);
+        result_center.x = left_up_corner.x + (maxcols-mincols)/2;
+        result_center.y = left_up_corner.y + (maxrows-minrows)/2;
+
     }
 /* Funkcja z pliku konfiguracyjnego czyta współrzedne środka szczeliny
 *  i zapisuje je do klasy przechowującej ustawienia programu.
@@ -121,6 +129,7 @@ void set_config (Configuration &config)
         tab_of_lines[1]=tab_of_lines[1].substr(tab_of_lines[1].find(delimiter)+1,tab_of_lines[1].length());
         config.slit_center.x=atoi(tab_of_lines[0].c_str());
         config.slit_center.y=atoi(tab_of_lines[1].c_str());
+        cout<<"Slit data are downloaded from: "<<config.config_file_name.c_str()<<endl;
         return;
     }
 /*
@@ -170,6 +179,7 @@ void Search_Config(int argc, char* argv[], Configuration &config)
                                     {
                                         config.error_treshold=7.5;
                                     }
+                            cout<<"You set up a error treshold to: "<<config.error_treshold<<endl;
                             }
                     }
             }
@@ -207,7 +217,7 @@ int PhotoEditor (Picture &picture1, OutputData &output)
         threshold(picture1.gray_image, picture1.bin_image, picture1.th1, 255 , THRESH_BINARY);
         medianBlur(picture1.bin_image,picture1.bin_image,7);
         MatToVector(picture1.bin_array,picture1.bin_image);
-        Rectangle(picture1.image,picture1.bin_array,picture1.left_up_corner,picture1.right_down_corner,output.rectangle_center);
+        Rectangle(picture1.image,picture1.bin_array,picture1.left_up_corner,picture1.right_down_corner,output.result_center);
         int length = picture1.right_down_corner.x-picture1.left_up_corner.x;
         int hight = picture1.right_down_corner.y-picture1.left_up_corner.y;
         if(length<0 || hight < 0)
@@ -224,27 +234,29 @@ int PhotoEditor (Picture &picture1, OutputData &output)
         return 0;
 
     }
-void Hough_Center(Picture &picture1,OutputData &output)
+Point Hough_Center(Picture &picture1,OutputData &output)
     {
                     vector<Vec3f> circles;
                     HoughCircles(picture1.bin_image,circles,CV_HOUGH_GRADIENT,1,picture1.image.rows,200,5,15,3*(picture1.right_down_corner.x-picture1.left_up_corner.x)/2);
-
+                    if(circles.size()==0)
+                        {
+                            return output.result_center;
+                        }
                     for(size_t i=0; i<circles.size(); i++)
                         {
                         Point center(cvRound(circles[i][0]), cvRound(circles[i][1]));
                         if(center.x<picture1.left_up_corner.x || center.x>picture1.right_down_corner.x ||
                             center.y<picture1.left_up_corner.y || center.y>picture1.right_down_corner.y)
                             {
-                                break;
+                                center.x=0;
+                                center.y=0;
+                                return output.result_center;
                             }
                         else
                             {
-                                output.hough_center.x=center.x;
-                                output.hough_center.y=center.y;
-                                //int radius=cvRound(circles[i][2]);
-                                //circle( picture1.image, center, 1, Scalar(0,255,0), -1, 8, 0 );
-                                //circle( picture1.image, center, radius, Scalar(0,0,255), 3, 8, 0 );
+
                             }
+                            return center;
                         }
     }
 ostream &operator<<(ostream &out, Picture &picture1)
@@ -263,22 +275,9 @@ ostream &operator<<(ostream &out, Picture &picture1)
                 return out;
     }
 
-ostream &operator<<(ostream &out, OutputData &output)
-
-    {
-        if(output.hough_center.x==0 || output.hough_center.y==0)
-            {
-                out<<"Rectangle Center:"<<output.rectangle_center<<"Weighted Center:"<<output.weighted_center<<endl;
-            }
-        else
-            {
-                out<<"Hough Center:"<<output.hough_center<<"Rectangle Center:"<<output.rectangle_center<<"Weighted Center:"<<output.weighted_center<<endl;
-            }
-        return out;
-    }
-
-void WeightedCenter(Picture &picture1,OutputData &output)
+Point WeightedCenter(Picture &picture1,OutputData &output)
         {
+            Point weighted_center;
             float sum=accumulate(picture1.cuted_array.begin(),picture1.cuted_array.end(),0.0);
             float Mx=0.0;
             float My=0.0;
@@ -293,7 +292,8 @@ void WeightedCenter(Picture &picture1,OutputData &output)
                         }
 
                 }
-                output.weighted_center.x += picture1.left_up_corner.x + Mx -1 ;
-                output.weighted_center.y += picture1.left_up_corner.y + My-1;
-                circle(picture1.image, output.weighted_center, 1, Scalar(255,20,147), -1, 8, 0);
+                weighted_center.x += picture1.left_up_corner.x + Mx -1 ;
+                weighted_center.y += picture1.left_up_corner.y + My-1;
+                circle(picture1.image, weighted_center, 1, Scalar(255,20,147), -1, 8, 0);
+                return weighted_center;
     }
