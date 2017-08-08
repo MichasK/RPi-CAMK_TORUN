@@ -21,98 +21,90 @@ int main(int argc, char *argv[])
         Configuration config;
         Search_Config(argc,argv,config);
         set_config(config);
+        Picture picture1;
+        OutputData output;
         int i=1;
         if(config.metod=='h')
-            {
+            {   cout<<"Wybrales Hough"<<endl;
                 while(i < argc)
                 {
-                    Picture picture1;
-                    OutputData output;
-                    if(IsPhoto(argv[i]))
+                    picture1.image=imread(argv[i],CV_LOAD_IMAGE_COLOR);
+                    if(picture1.image.empty())
                         {
-                            picture1.image=imread(argv[i],CV_LOAD_IMAGE_COLOR);
-                            if(picture1.image.empty())
-                                {
-                                    i += 1;
-                                    return -1;
-                                }
-                            if(PhotoEditor(picture1,output)==0)
-                                {
-                                output.result_center=Hough_Center(picture1,output);
-
-                                }
+                            i += 1;
+                            continue;
+                        }
+                    if(PhotoEditor(picture1,output)==0)
+                        {
+                            output.result_center=Hough_Center(picture1,output);
                         }
                     i += 1;
+                cout<<output.result_center<<endl;
                 }
             }
         if(config.metod=='w')
             {
+                cout<<"Wybrales wazony"<<endl;
                 while(i < argc)
                     {
                         Picture picture1;
                         OutputData output;
-                        if(IsPhoto(argv[i]))
+                        picture1.image=imread(argv[i],CV_LOAD_IMAGE_COLOR);
+                        if(picture1.image.empty())
                             {
-                                picture1.image=imread(argv[i],CV_LOAD_IMAGE_COLOR);
-                                if(picture1.image.empty())
-                                    {
-                                        i += 1;
-                                        return -1;
-                                    }
-                                if(PhotoEditor(picture1,output)==0)
-                                    {
-                                    output.result_center=WeightedCenter(picture1,output);
-
-                                    }
+                                i += 1;
+                                continue;
                             }
+                        if(PhotoEditor(picture1,output)==0)
+                            {
+                                output.result_center=WeightedCenter(picture1,output);
+                            }
+                        cout<<output.result_center<<endl;
+                        i += 1;
+                        //cout<<picture1;
                     }
-                i += 1;
+
             }
         if(config.metod=='r')
-            {
+            {   cout<<"Wybrales srodek prostokata"<<endl;
                 while(i < argc)
                     {
                         Picture picture1;
                         OutputData output;
-                        if(IsPhoto(argv[i]))
+                        picture1.image=imread(argv[i],CV_LOAD_IMAGE_COLOR);
+                        if(picture1.image.empty())
                             {
-                                picture1.image=imread(argv[i],CV_LOAD_IMAGE_COLOR);
-                                if(picture1.image.empty())
-                                    {
-                                        i += 1;
-                                        return -1;
-                                    }
-                                if(PhotoEditor(picture1,output)==0)
-                                    {
-
-                                    }
+                                i += 1;
+                                continue;
                             }
-                        i +=1;
+                        PhotoEditor(picture1,output)==0;
+                        cout<<output.result_center<<endl;
+                        i += 1;
                     }
             }
         if(config.metod=='a')
             {
+                cout<<"Wybrales arytmetyczny";
                 {
                     while(i < argc)
                         {
                             Picture picture1;
                             OutputData output;
-                            if(IsPhoto(argv[i]))
+                            picture1.image=imread(argv[i],CV_LOAD_IMAGE_COLOR);
+                            if(picture1.image.empty())
                                 {
-                                    picture1.image=imread(argv[i],CV_LOAD_IMAGE_COLOR);
-                                    if(picture1.image.empty())
-                                        {
-                                            i += 1;
-                                            return -1;
-                                        }
-                                    if(PhotoEditor(picture1,output)==0)
-                                        {
-                                            Point Hough=Hough_Center(picture1,output);
-                                            Point Weighted=WeightedCenter(picture1,output);
-                                            output.result_center += Weighted + Hough;
-                                            output.result_center /= 3;
-                                        }
+                                    i += 1;
+                                    continue;
                                 }
+                            if(PhotoEditor(picture1,output)==0)
+                                {
+                                    Point Hough=Hough_Center(picture1,output);
+                                    Point Weighted=WeightedCenter(picture1,output);
+                                    output.result_center += Weighted + Hough;
+                                    output.result_center /= 3;
+                                }
+                                        cout<<output.result_center<<endl;
+
                             i += 1;
                         }
 

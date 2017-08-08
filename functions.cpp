@@ -76,7 +76,7 @@ double TreshHold (double standard_deviation, double median)
     }
 
 ///!!!! optymalizuj!!!!/////////
-void Rectangle (Mat &image, vector<short int> bin_array, Point &left_up_corner, Point &right_down_corner, Point &result_center)
+Point Rectangle (Mat &image, vector<short int> bin_array, Point &left_up_corner, Point &right_down_corner, Point &result_center)
 
     {
         unsigned int minrows = 0;
@@ -101,6 +101,7 @@ void Rectangle (Mat &image, vector<short int> bin_array, Point &left_up_corner, 
         right_down_corner.y = maxrows;
         result_center.x = left_up_corner.x + (maxcols-mincols)/2;
         result_center.y = left_up_corner.y + (maxrows-minrows)/2;
+        return result_center;
 
     }
 /* Funkcja z pliku konfiguracyjnego czyta współrzedne środka szczeliny
@@ -206,18 +207,18 @@ bool IsPhoto (string file_name)
 int PhotoEditor (Picture &picture1, OutputData &output)
 
     {
-        medianBlur(picture1.image,picture1.blurred_image,5);
-        cvtColor(picture1.blurred_image,picture1.gray_image, CV_BGR2GRAY);
+        medianBlur(picture1.image,picture1.blurred_image,3);
+        cvtColor(picture1.image,picture1.gray_image, CV_BGR2GRAY);
         GaussianBlur( picture1.gray_image,picture1.gray_image, Size( 5, 5), 3, 3 );
         MatToVector(picture1.gray_array,picture1.gray_image);
-        picture1.average=Average(picture1.gray_array);
+        //picture1.average=Average(picture1.gray_array);
         picture1.median1=Median(picture1.gray_array);
         picture1.stdev1=StandardDeviation(picture1.gray_array,picture1.median1);
         picture1.th1=TreshHold(picture1.stdev1,picture1.median1);
         threshold(picture1.gray_image, picture1.bin_image, picture1.th1, 255 , THRESH_BINARY);
         medianBlur(picture1.bin_image,picture1.bin_image,7);
         MatToVector(picture1.bin_array,picture1.bin_image);
-        Rectangle(picture1.image,picture1.bin_array,picture1.left_up_corner,picture1.right_down_corner,output.result_center);
+        output.result_center=Rectangle(picture1.image,picture1.bin_array,picture1.left_up_corner,picture1.right_down_corner,output.result_center);
         int length = picture1.right_down_corner.x-picture1.left_up_corner.x;
         int hight = picture1.right_down_corner.y-picture1.left_up_corner.y;
         if(length<0 || hight < 0)
