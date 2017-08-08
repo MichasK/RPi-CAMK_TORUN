@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
                                 i += 1;
                                 continue;
                             }
-                        PhotoEditor(picture1,output)==0;
+                        PhotoEditor(picture1,output);
                         cout<<output.result_center<<endl;
                         i += 1;
                     }

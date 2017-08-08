@@ -216,7 +216,7 @@ int PhotoEditor (Picture &picture1, OutputData &output)
         picture1.stdev1=StandardDeviation(picture1.gray_array,picture1.median1);
         picture1.th1=TreshHold(picture1.stdev1,picture1.median1);
         threshold(picture1.gray_image, picture1.bin_image, picture1.th1, 255 , THRESH_BINARY);
-        medianBlur(picture1.bin_image,picture1.bin_image,7);
+        //medianBlur(picture1.bin_image,picture1.bin_image,7);
         MatToVector(picture1.bin_array,picture1.bin_image);
         output.result_center=Rectangle(picture1.image,picture1.bin_array,picture1.left_up_corner,picture1.right_down_corner,output.result_center);
         int length = picture1.right_down_corner.x-picture1.left_up_corner.x;
