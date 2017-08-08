@@ -207,12 +207,13 @@ bool IsPhoto (string file_name)
 int PhotoEditor (Picture &picture1, OutputData &output)
 
     {
-        medianBlur(picture1.image,picture1.blurred_image,3);
+        //medianBlur(picture1.image,picture1.blurred_image,3);
         cvtColor(picture1.image,picture1.gray_image, CV_BGR2GRAY);
         GaussianBlur( picture1.gray_image,picture1.gray_image, Size( 5, 5), 3, 3 );
         MatToVector(picture1.gray_array,picture1.gray_image);
         //picture1.average=Average(picture1.gray_array);
-        picture1.median1=Median(picture1.gray_array);
+        //picture1.median1=Median(picture1.gray_array);
+        picture1.median1=4;
         picture1.stdev1=StandardDeviation(picture1.gray_array,picture1.median1);
         picture1.th1=TreshHold(picture1.stdev1,picture1.median1);
         threshold(picture1.gray_image, picture1.bin_image, picture1.th1, 255 , THRESH_BINARY);
