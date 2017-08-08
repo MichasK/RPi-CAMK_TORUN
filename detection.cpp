@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
                             }
                         cout<<output.result_center<<endl;
                         i += 1;
-                        //cout<<picture1;
+                        cout<<picture1;
                     }
 
             }
