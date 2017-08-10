@@ -2,11 +2,13 @@
 #include "Picture.h"
 #include "OutputData.h"
 #include "Configuration.h"
+#include "image_processing.h"
+#include "image_matfunctions.h"
 #include <unistd.h> /*for UART*/
 #include <fcntl.h> /*for UART*/
 #include <termios.h> /*for UART*/
 extern "C"{
-#include "uart.c"
+#include "uart.h"
 };
 /*  1. Znalezienie pliku konfiguracyjnego.
     2. Ustawienie danych zawartych w pliku konfiguracyjnym
@@ -24,19 +26,7 @@ extern "C"{
 */
 int main(int argc, char *argv[])
     {
-        int uart_filestream = -1;
-        uart_filestream = open("/dev/ttyUSB0", O_RDWR | O_NOCTTY);
-        if(uart_filestream == -1)
-            {
-                cout<<"Error! Failed to open UART"<<endl;
-            }
-        else
-            {   if(configureSerialPort(uart_filestream,B9600) != 0)
-                    {
-                        cout<<"Configuration Failed"<<endl;
-                    }
-
-            }
+        int uart_filestream = uart_init();//nie przetestowane
         Configuration config;
         Search_Config(argc,argv,config);
         set_config(config);
@@ -122,10 +112,8 @@ int main(int argc, char *argv[])
                                     output.result_center += Weighted + Hough;
                                     output.result_center /= 3;
                                 }
-                                        cout<<output.result_center;
                                         output.vector_error = output.result_center - config.slit_center;
                                         output.norm_of_vector_error = cv::norm(output.vector_error);
-                                        cout<<output.norm_of_vector_error;
                                         if(output.norm_of_vector_error>config.error_treshold)
                                             {
                                                 write(uart_filestream,"1\n",2);
@@ -141,8 +129,5 @@ int main(int argc, char *argv[])
                 }
 
             }
-
-        //cout<<output.result_center<<endl;
-        //cout<<picture1;
         return 0;
     }

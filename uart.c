@@ -212,3 +212,19 @@ int sendCommand(int uartFileStream, const char command[], int n)
 	}
 
 }
+int uart_init()
+    {
+        int uart_filestream = open("/dev/ttyUSB0", O_RDWR | O_NOCTTY);
+        if(uart_filestream == -1)
+            {
+                printf("Error! Failed to open UART\n");
+            }
+        else
+            {   if(configureSerialPort(uart_filestream,B9600) != 0)
+                    {
+                        printf("Configuration Failed");
+                    }
+
+            }
+        return uart_filestream;
+    }

@@ -32,5 +32,5 @@ int readLine(int uartFilestream, char line[], int n, int *received, unsigned int
 int sendCommand(int uartFilestream, const char command[], int n);
 
 void clearUart(int uartFilestream);
-
+int uart_init();
 #endif /*_UART__H_*/
