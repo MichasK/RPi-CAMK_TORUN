@@ -15,7 +15,7 @@
 
 
     using namespace std;
-    using namespace cv;
+    
 
     bool IsPhoto(string file_name);
     void Search_Config(int argc,char* argv[],Configuration &config);

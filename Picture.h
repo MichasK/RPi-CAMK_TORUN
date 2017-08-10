@@ -3,6 +3,7 @@
 
 #include <opencv/cv.hpp>
 #include <vector>
+    using namespace cv;
 class Picture
     {
     private:

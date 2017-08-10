@@ -1,5 +1,6 @@
 #ifndef OutputData_h
 #define OutputData_h
+    using namespace cv;
     class OutputData
         {
         public:
