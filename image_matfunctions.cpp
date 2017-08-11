@@ -2,6 +2,7 @@
 #include "Picture.h"
 #include "OutputData.h"
 #include "Configuration.h"
+#include <time.h>
 
 double Median (vector<short int> &array)
 
@@ -168,4 +169,13 @@ ostream &operator<<(ostream &out, Picture &picture1)
                 waitKey(0);
 
                 return out;
+    }
+std::string GetActualTime(void)
+    {
+        time_t czas;
+        struct tm * ptr;
+        time( & czas );
+        ptr= localtime( & czas );
+        string data(asctime( ptr ));
+        return data;
     }

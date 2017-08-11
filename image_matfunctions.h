@@ -4,4 +4,5 @@
     double Average (vector<short int> &array);
     double StandardDeviation (vector<short int> &array, double average);
     double TreshHold (double standard_deviation, double median);
+    std::string GetActualTime(void);
 #endif

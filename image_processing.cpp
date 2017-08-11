@@ -5,30 +5,32 @@
 #include "image_processing.h"
 #include "image_matfunctions.h"
 
+/*
+    Funkcja otrzymuje Obraz w którym zawarta jest gwiazda i oblicza środek ważony wartości obrazu.
+    weighted_center.x=picture[x][y]*x/sum
+    weighted_center.y=picture[x][y]*y/sum
+    Następnie dokonuje się kalibracji względem współrzednych na ramce
+    Funkcja zwraca cv::Point będący współrzednymi srodka wazonego na obrazie
 
+*/
+Point WeightedCenter  (Picture &picture1,OutputData &output)
 
-
-Point WeightedCenter(Picture &picture1,OutputData &output)
-        {
-            Point weighted_center;
-            float sum=accumulate(picture1.cuted_array.begin(),picture1.cuted_array.end(),0.0);
-            float Mx=0.0;
-            float My=0.0;
-
+    {
+        Point weighted_center;
+        float sum=accumulate(picture1.cuted_array.begin(),picture1.cuted_array.end(),0.0);
+        float Mx=0.0;
+        float My=0.0;
             for(int i=0;i<picture1.cuted_image.rows;i++)
-                {
-                    for(int j=0; j<picture1.cuted_image.cols;j++)
-                        {
-
-                            Mx += (picture1.cuted_array[(i*picture1.cuted_image.cols) + j]*j/sum);
-                            My += (picture1.cuted_array[(i*picture1.cuted_image.cols) + j]*i/sum);
-                        }
-
-                }
-                weighted_center.x += picture1.left_up_corner.x + Mx -1 ;
-                weighted_center.y += picture1.left_up_corner.y + My-1;
-                circle(picture1.image, weighted_center, 1, Scalar(255,20,147), -1, 8, 0);
-                return weighted_center;
+            {
+                for(int j=0; j<picture1.cuted_image.cols;j++)
+                    {
+                        Mx += (picture1.cuted_array[(i*picture1.cuted_image.cols) + j]*j/sum);
+                        My += (picture1.cuted_array[(i*picture1.cuted_image.cols) + j]*i/sum);
+                    }
+            }
+        weighted_center.x += picture1.left_up_corner.x + Mx -1 ;
+        weighted_center.y += picture1.left_up_corner.y + My-1;
+        return weighted_center;
     }
 
 Point Hough_Center(Picture &picture1,OutputData &output)
@@ -110,9 +112,9 @@ Point Rectangle (Mat &image, vector<short int> bin_array, Point &left_up_corner,
 
         }
 
-        /*
-        Funkcja konwertuje obraz w skali szarosci do tablicy jednowymiarowej wiersz po wierszu.
-        */
+/*
+    Funkcja konwertuje obraz w skali szarosci do tablicy jednowymiarowej wiersz po wierszu.
+*/
 
 void MatToVector (vector<short int> &array, Mat &image)
 

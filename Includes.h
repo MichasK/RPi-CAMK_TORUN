@@ -8,6 +8,7 @@
     #include <math.h>//stdev
     #include <numeric>//for nth_element
     #include <fstream>//for configuration_file
+    #include <sstream>
 
     class Configuration;
     class OutputData;
