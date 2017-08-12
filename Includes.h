@@ -16,9 +16,4 @@
 
 
     using namespace std;
-    
-
-    bool IsPhoto(string file_name);
-    void Search_Config(int argc,char* argv[],Configuration &config);
-    void set_config(Configuration &config);
 #endif

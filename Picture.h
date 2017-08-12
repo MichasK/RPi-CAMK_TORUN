@@ -9,9 +9,6 @@ class Picture
     private:
         Point left_up_corner;
         Point right_down_corner;
-        Point the_brightness_point_cord;
-        Mat blurred_image;
-        Mat gray_image;
         Mat bin_image;
         Mat cuted_image;
         float median1;

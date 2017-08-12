@@ -11,18 +11,17 @@
     weighted_center.y=picture[x][y]*y/sum
     Następnie dokonuje się kalibracji względem współrzednych na ramce
     Funkcja zwraca cv::Point będący współrzednymi srodka wazonego na obrazie
-
 */
-Point WeightedCenter  (Picture &picture1,OutputData &output)
+Point WeightedCenter (Picture &picture1,OutputData &output)
 
     {
         Point weighted_center;
-        float sum=accumulate(picture1.cuted_array.begin(),picture1.cuted_array.end(),0.0);
-        float Mx=0.0;
-        float My=0.0;
-            for(int i=0;i<picture1.cuted_image.rows;i++)
+        float sum = accumulate (picture1.cuted_array.begin(),picture1.cuted_array.end(),0.0);
+        float Mx = 0.0;
+        float My = 0.0;
+        for (int i = 0; i < picture1.cuted_image.rows; i++)
             {
-                for(int j=0; j<picture1.cuted_image.cols;j++)
+                for (int j = 0; j < picture1.cuted_image.cols; j++)
                     {
                         Mx += (picture1.cuted_array[(i*picture1.cuted_image.cols) + j]*j/sum);
                         My += (picture1.cuted_array[(i*picture1.cuted_image.cols) + j]*i/sum);
@@ -33,16 +32,21 @@ Point WeightedCenter  (Picture &picture1,OutputData &output)
         return weighted_center;
     }
 
+
+/*  Funkcja poszukuje środka gwiazdy metoda Transformacji Hougha
+*   Zwraca
+*        punkt będący środkiem znalezionego okręgu
+*        środek prostokąta opisującego jeśli nie znaleziono
+*/
+
+
 Point Hough_Center(Picture &picture1,OutputData &output)
 
         {
             Point center;
             vector<Vec3f> circles;
-            HoughCircles(picture1.bin_image,circles,CV_HOUGH_GRADIENT,1,picture1.image.rows,200,5,15,3*(picture1.right_down_corner.x-picture1.left_up_corner.x)/2);
-            if(circles.size()==0)
-                {
-                    return output.result_center;
-                }
+            HoughCircles(picture1.bin_image, circles, CV_HOUGH_GRADIENT, 1, picture1.image.rows,200,5,15,3*(picture1.right_down_corner.x-picture1.left_up_corner.x)/2);
+            if(circles.size()==0) output.result_center;
             center.x=circles[0][0];
             center.y=circles[0][1];
             if(center.x<picture1.left_up_corner.x || center.x>picture1.right_down_corner.x ||
@@ -53,18 +57,29 @@ Point Hough_Center(Picture &picture1,OutputData &output)
             return center;
 
         }
-
+/*
+*   1)Filr Medianowy z maską 3x3
+*   2)Konwersja obrazu w skalę szarości
+*   3)Filr Gaussowski
+*   4)Obraz -> gray_array
+*   5)Operacja TreshHold -> bin_array
+*   6)Srodek prostokąta opisującego plamkę światła
+*   return
+        jeżeli operacje zostały wykonane poprawnie 0;
+        jeżeli nastąpi błąd -1;
+*/
 int PhotoEditor (Picture &picture1, OutputData &output)
 
         {
-            medianBlur(picture1.image,picture1.blurred_image,3);
-            cvtColor(picture1.image,picture1.gray_image, CV_BGR2GRAY);
-            GaussianBlur( picture1.gray_image,picture1.gray_image, Size( 5, 5), 3, 3 );
-            MatToVector(picture1.gray_array,picture1.gray_image);
+            Mat image_blurred;
+            medianBlur(picture1.image,image_blurred,3);
+            cvtColor(image_blurred,picture1.image, CV_BGR2GRAY);
+            GaussianBlur( picture1.image,picture1.image, Size( 5, 5), 3, 3 );
+            MatToVector(picture1.gray_array,picture1.image);
             picture1.median1=Average(picture1.gray_array);
             picture1.stdev1=StandardDeviation(picture1.gray_array,picture1.median1);
             picture1.th1=TreshHold(picture1.stdev1,picture1.median1);
-            threshold(picture1.gray_image, picture1.bin_image, picture1.th1, 255 , THRESH_BINARY);
+            threshold(picture1.image, picture1.bin_image, picture1.th1, 255 , THRESH_BINARY);
             MatToVector(picture1.bin_array,picture1.bin_image);
             output.result_center=Rectangle(picture1.image,picture1.bin_array,picture1.left_up_corner,picture1.right_down_corner,output.result_center);
             int length = picture1.right_down_corner.x-picture1.left_up_corner.x;
@@ -82,6 +97,14 @@ int PhotoEditor (Picture &picture1, OutputData &output)
             return 0;
 
         }
+/* Funkcja szuka prostokąta opisującego gwiazdę, zaimplementowana metoda do wykonania tej operacji potrzebuje przejść 1 raz
+* całą tablicę, jednak kilka razy musi nałożyć maskę ( dokładnie tyle razy ile mamy białych pikseli), jednak w porównianiu
+*do drugiej metody potrzebującej około 1.5 raza i tak na próbie 1000 zdjec wypada lepiej więc ostatecznie ona została
+*uznana za najbardziej wydajna
+*
+*
+*
+*/
 
 Point Rectangle (Mat &image, vector<short int> bin_array, Point &left_up_corner, Point &right_down_corner, Point &result_center)
 
@@ -90,6 +113,7 @@ Point Rectangle (Mat &image, vector<short int> bin_array, Point &left_up_corner,
             unsigned int mincols = 0;
             unsigned int maxrows = image.rows;
             unsigned int maxcols = image.cols;
+            //int minrows1,mincols1,maxrows1,maxcols1;
             for (unsigned int i=0; i<bin_array.size(); i++)
                 {
                     if(bin_array[i] == 255)
@@ -100,8 +124,40 @@ Point Rectangle (Mat &image, vector<short int> bin_array, Point &left_up_corner,
                             if(i%image.cols>mincols) mincols=i%image.cols;
                         }
                 }
-            swap(minrows, maxrows);
-            swap(mincols, maxcols);
+            swap(minrows,maxrows);
+            swap(mincols,maxcols);
+            /*for (int i=0; i< image.rows; i++)
+                {
+                    for (int j=0; j<image.cols; j++)
+                        {
+                            if(bin_array[i*image.cols + j]  == 255)
+                                {minrows = i;i=image.rows+1;j=image.cols+1;break;}
+                        }
+                }
+            for (int j=0; j<image.cols; j++)
+                {
+                    for(int i=0; i<image.rows; i++)
+                        {
+                            if(bin_array[i*image.cols + j]  == 255)
+                            {mincols = j;i=image.rows+1;j=image.cols+1;break;}
+                        }
+                }
+            for(int i=image.rows-1; i>=0; i--)
+                {
+                    for(int j=0; j< image.cols; j++)
+                        {
+                            if(bin_array[i*image.cols + j]  == 255)
+                            {maxrows = i;i=-1;j=image.cols+1;break;}
+                        }
+                }
+            for(int j=image.cols-1; j>=0; j--)
+                {
+                    for(int i=0; i<image.rows; i++)
+                        {
+                            if(bin_array[i*image.cols + j]  == 255)
+                            {maxcols = j;i=image.rows+1;j=-1;break;}
+                        }
+                }*/
             left_up_corner.x = mincols;
             left_up_corner.y = minrows;
             right_down_corner.x = maxcols;
