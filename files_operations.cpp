@@ -17,7 +17,7 @@ e-mail: krzyszczuk.michal@gmail.com
         {
             std::fstream output_file;
 
-            output_file.open(output_file_name,ios::in);
+            output_file.open(output_file_name.c_str(),ios::in);
             std::fstream temp_file;
             temp_file.open("temp_file.txt",ios::out | ios::app);
             std::string line;

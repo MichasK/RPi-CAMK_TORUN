@@ -9,6 +9,6 @@ uart.o: uart.c
 image_processing.o:	image_processing.cpp
 	g++ -c image_processing.cpp -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_imgcodecs -Wall
 files_operations.o:	files_operations.cpp
-	g++ -c files_operations.cpp
+	g++ -c files_operations.cpp -Wall
 clean:
 	rm -f core app detection.o image_matfunctions.o uart.o files_operations.o
