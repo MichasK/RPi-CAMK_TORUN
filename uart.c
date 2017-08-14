@@ -214,7 +214,7 @@ int sendCommand(int uartFileStream, const char command[], int n)
 }
 int uart_init()
     {
-        int uart_filestream = open("/dev/ttyUSB0", O_RDWR | O_NOCTTY);
+        int uart_filestream = open("/dev/ttyUSB0", O_WRONLY);
         if(uart_filestream == -1)
             {
                 printf("Error! Failed to open UART\n");

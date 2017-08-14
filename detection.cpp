@@ -17,19 +17,7 @@ extern "C"{
 #include "uart.h"
 };
 #include <iomanip>
-/*  1. Znalezienie pliku konfiguracyjnego.
-    2. Ustawienie danych zawartych w pliku konfiguracyjnym
-    3. Glowna petla programu dzialajaca dla wszystkich argumentow wywolania programu
-    4. Sprawdzenie czy argument ma rozszerzenie charakterystyczne dla obrazow ?
-    5. Funkcja PhotoEditor(-1, cos poszlo nie tak):
-        a)filtr medianowy
-        b)konwersja w skale szarosci
-        c)filtr Gaussowski
-        d)Przefiltrowany obraz -> gray_array
-        e)Matematyczne obliczenia(srednia,mediana,odchylenie,threshold)
-        f)binaryzacja obrazu pixele 0 || 255 -> bin_array.
-    6. Transformacja Hougha.
-    7. Obliczenie srodka wazonego.
+/*
 */
 int main(int argc, char *argv[])
 {
@@ -69,12 +57,13 @@ int main(int argc, char *argv[])
                 else
                     {
                         write(uart_filestream,"3\n",2);
-                        SaveToFile(GetActualTime(),5,"html/error_list.txt");
+                        SaveToFile(GetActualTime(),10,"/var/www/html/error_list.txt");
                     }
-                SaveToFile(result_line.str(),100,"html/ErrorVectorNorm.txt");
+                SaveToFile(result_line.str(),100,"/var/www/html/ErrorVectorNorm.txt");
                 result_line.str(std::string());
                 }
                 i += 1;
+                //cout<<picture;
         }
     close(uart_filestream);
     return 0;

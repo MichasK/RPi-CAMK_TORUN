@@ -1,0 +1,19 @@
+set term gif enhanced size 1240,960;
+set output '/var/www/html/output.png'
+set xlabel "photos"
+set ylabel "vector norm"
+set yrange [0:25]
+unset log                              # remove any log-scaling
+unset label                            # remove any previous labels
+set xtic auto                          # set xtics automatically
+set ytic auto                          # set ytics automatically
+set title "Deviation of used methods"
+set key title "Implemented methods"
+set multi
+plot "/var/www/html/ErrorVectorNorm.txt" using 0:1 with lines linetype 2 linecolor "blue" linewidth 2 title "Hough Transorm",\
+"/var/www/html/ErrorVectorNorm.txt" using 0:2 with lines linetype 2 linecolor "red" linewidth 2  title "COG",\
+"/var/www/html/ErrorVectorNorm.txt" using 0:3 with lines linetype 2 linecolor "green" linewidth 2 title "Rectangle Center",\
+"/var/www/html/ErrorVectorNorm.txt" using 0:4 with lines linetype 2 linecolor "black" linewidth 2 title "Average Center"
+
+
+

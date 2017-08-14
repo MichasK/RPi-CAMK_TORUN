@@ -3,6 +3,7 @@
 #include "OutputData.h"
 #include "Configuration.h"
 #include <time.h>
+#include <unistd.h>
 
 double Median (vector<short int> &array)
 
@@ -65,7 +66,11 @@ ostream &operator<<(ostream &out, Picture &picture1)
 
                 imshow("Wykryte koło",picture1.image);
 
-                waitKey(0);
+                sleep(1);
+
+                cvDestroyWindow("Wykryte koło");
+
+                cvDestroyWindow("Obraz binarny");
 
                 return out;
     }

@@ -30,7 +30,7 @@ e-mail: krzyszczuk.michal@gmail.com
             while(getline(output_file,line)) line_counter += 1;
             output_file.clear();
             output_file.seekg(0, ios::beg);
-            temp_file<<message<<std::endl;
+            temp_file<<message<<endl;
             if(line_counter<lines_treshold)
                 {
                     while(getline(output_file,line))
