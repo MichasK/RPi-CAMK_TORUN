@@ -1,6 +1,6 @@
 #!/bin/bash
 for((;;)); do
-    tab=($(ls photos/*.bmp))
+    tab=($(ls $1/*.bmp))
     for((i=0; $i<${#tab[@]};i++)); do
         ./app ${tab[$i]} -c dane.config -e 10.75
         gnuplot wykres

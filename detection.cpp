@@ -21,22 +21,21 @@ extern "C"{
 */
 int main(int argc, char *argv[])
 {
-    int uart_filestream = uart_init();//nie przetestowane
+    int uart_filestream = uart_init();
     Configuration config;
     Search_Config(argc,argv,config);
     set_config(config);
     Picture picture;
     OutputData output;
-    stringstream result_line;
-    string file_output_line;
+    stringstream result_line;//zapis wszystkich dlugosci wektorow do pliku
     int i = 1;
     while(i < argc)
         {
             string path_to_file(argv[i]);
             picture.image=imread(argv[i],CV_LOAD_IMAGE_COLOR);
-            if(IsPhoto(path_to_file) && ~picture.image.empty())
+            if(IsPhoto(path_to_file) && ~picture.image.empty())//jezeli cos jest obrazem i zostalo wczytane
                 {
-                //cout<<path_to_file<<endl;
+
                 if(PhotoEditor(picture,output)==0)
                     {
                         result_line<<setw(5)<<left<<cv::norm(output.result_center-config.slit_center);
@@ -63,7 +62,6 @@ int main(int argc, char *argv[])
                 result_line.str(std::string());
                 }
                 i += 1;
-                //cout<<picture;
         }
     close(uart_filestream);
     return 0;

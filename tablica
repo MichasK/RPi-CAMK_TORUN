@@ -1,4 +1,0 @@
-#!/bin/bash
-tablica=()
-`ls *.bmp` > tablica[*]
-echo ${tablica[@]}

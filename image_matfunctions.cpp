@@ -5,7 +5,7 @@
 #include <time.h>
 #include <unistd.h>
 
-double Median (vector<short int> &array)
+double Median (std::vector<short int> &array)
 
     {
 
@@ -16,7 +16,7 @@ double Median (vector<short int> &array)
     }
 
 
-double Average (vector<short int> &array)
+double Average (std::vector<short int> &array)
 
     {
         double sum=0.0;
@@ -29,7 +29,7 @@ double Average (vector<short int> &array)
     }
 
 
-double StandardDeviation (vector<short int> &array, double average)
+double StandardDeviation (std::vector<short int> &array, double average)
 
     {
         double accum = 0.0;
@@ -51,11 +51,11 @@ double TreshHold (double standard_deviation, double median)
 
     }
 
+/*
+*Przeciążony operator wyświetlania obrazu
+*/
 
-
-
-
-ostream &operator<<(ostream &out, Picture &picture1)
+std::ostream &operator<<(std::ostream &out, Picture &picture1)
 
     {
                 namedWindow("Wykryte koło",CV_WINDOW_AUTOSIZE);
@@ -74,12 +74,17 @@ ostream &operator<<(ostream &out, Picture &picture1)
 
                 return out;
     }
+/*
+*   String zawierajacy aktualna date
+*/
 std::string GetActualTime(void)
+
     {
         time_t czas;
         struct tm * ptr;
         time( & czas );
         ptr= localtime( & czas );
         string data(asctime( ptr ));
+        data.erase(std::remove(data.begin(), data.end(), '\n'), data.end());
         return data;
     }

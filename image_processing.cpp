@@ -1,10 +1,11 @@
-#include "Includes.h"
 #include "Picture.h"
 #include "OutputData.h"
-#include "Configuration.h"
 #include "image_processing.h"
 #include "image_matfunctions.h"
-
+#include "opencv2/highgui/highgui.hpp"
+#include "opencv2/imgproc/imgproc.hpp"
+#include <vector>
+#include <numeric>
 /*
     Funkcja otrzymuje Obraz w którym zawarta jest gwiazda i oblicza środek ważony wartości obrazu.
     weighted_center.x=picture[x][y]*x/sum
@@ -12,45 +13,45 @@
     Następnie dokonuje się kalibracji względem współrzednych na ramce
     Funkcja zwraca cv::Point będący współrzednymi srodka wazonego na obrazie
 */
-Point WeightedCenter (Picture &picture1,OutputData &output)
+cv::Point WeightedCenter (Picture &picture,OutputData &output)
 
     {
         Point weighted_center;
-        float sum = accumulate (picture1.cuted_array.begin(),picture1.cuted_array.end(),0.0);
+        float sum = std::accumulate (picture.cuted_array.begin(), picture.cuted_array.end(), 0.0);
         float Mx = 0.0;
         float My = 0.0;
-        for (int i = 0; i < picture1.cuted_image.rows; i++)
+        for (int i = 0; i < picture.cuted_image.rows; i++)
             {
-                for (int j = 0; j < picture1.cuted_image.cols; j++)
+                for (int j = 0; j < picture.cuted_image.cols; j++)
                     {
-                        Mx += (picture1.cuted_array[(i*picture1.cuted_image.cols) + j]*j/sum);
-                        My += (picture1.cuted_array[(i*picture1.cuted_image.cols) + j]*i/sum);
+                        Mx += (picture.cuted_array[(i*picture.cuted_image.cols) + j]*j/sum);
+                        My += (picture.cuted_array[(i*picture.cuted_image.cols) + j]*i/sum);
                     }
             }
-        weighted_center.x += picture1.left_up_corner.x + Mx -1 ;
-        weighted_center.y += picture1.left_up_corner.y + My-1;
+        weighted_center.x += picture.left_up_corner.x + Mx -1 ;
+        weighted_center.y += picture.left_up_corner.y + My-1;
         return weighted_center;
     }
 
 
 /*  Funkcja poszukuje środka gwiazdy metoda Transformacji Hougha
 *   Zwraca
-*        punkt będący środkiem znalezionego okręgu
-*        środek prostokąta opisującego jeśli nie znaleziono
+*        a)punkt będący środkiem znalezionego okręgu
+*        b)środek prostokąta opisującego jeśli nie znaleziono
 */
 
 
-Point Hough_Center(Picture &picture1,OutputData &output)
+cv::Point Hough_Center (Picture &picture, OutputData &output)
 
         {
             Point center;
-            vector<Vec3f> circles;
-            HoughCircles(picture1.bin_image, circles, CV_HOUGH_GRADIENT, 1, picture1.image.rows,200,5,15,3*(picture1.right_down_corner.x-picture1.left_up_corner.x)/2);
-            if(circles.size()==0) output.result_center;
+            std::vector<Vec3f> circles;
+            HoughCircles(picture.bin_image, circles, CV_HOUGH_GRADIENT, 1, picture.image.rows,200,5,0,0);
+            if (circles.size()==0) return output.result_center;
             center.x=circles[0][0];
             center.y=circles[0][1];
-            if(center.x<picture1.left_up_corner.x || center.x>picture1.right_down_corner.x ||
-            center.y<picture1.left_up_corner.y || center.y>picture1.right_down_corner.y)
+            if(center.x<picture.left_up_corner.x || center.x>picture.right_down_corner.x ||
+            center.y<picture.left_up_corner.y || center.y>picture.right_down_corner.y)
                 {
                     return output.result_center;
                 }
@@ -68,45 +69,39 @@ Point Hough_Center(Picture &picture1,OutputData &output)
         jeżeli operacje zostały wykonane poprawnie 0;
         jeżeli nastąpi błąd -1;
 */
-int PhotoEditor (Picture &picture1, OutputData &output)
+int PhotoEditor (Picture &picture, OutputData &output)
 
         {
             Mat image_blurred;
-            medianBlur(picture1.image,image_blurred,3);
-            cvtColor(image_blurred,picture1.image, CV_BGR2GRAY);
-            GaussianBlur( picture1.image,picture1.image, Size( 5, 5), 3, 3 );
-            MatToVector(picture1.gray_array,picture1.image);
-            picture1.median1=Average(picture1.gray_array);
-            picture1.stdev1=StandardDeviation(picture1.gray_array,picture1.median1);
-            picture1.th1=TreshHold(picture1.stdev1,picture1.median1);
-            threshold(picture1.image, picture1.bin_image, picture1.th1, 255 , THRESH_BINARY);
-            MatToVector(picture1.bin_array,picture1.bin_image);
-            output.result_center=Rectangle(picture1.image,picture1.bin_array,picture1.left_up_corner,picture1.right_down_corner,output.result_center);
-            int length = picture1.right_down_corner.x-picture1.left_up_corner.x;
-            int hight = picture1.right_down_corner.y-picture1.left_up_corner.y;
-            if(length<0 || hight < 0)
+            medianBlur(picture.image,image_blurred,3);
+            cvtColor(image_blurred,picture.image, CV_BGR2GRAY);
+            GaussianBlur( picture.image,picture.image, Size( 5, 5), 3, 3 );
+            MatToVector(picture.gray_array,picture.image);
+            picture.median1=Average(picture.gray_array);
+            picture.stdev1=StandardDeviation(picture.gray_array,picture.median1);
+            picture.th1=TreshHold(picture.stdev1,picture.median1);
+            threshold(picture.image, picture.bin_image, picture.th1, 255 , THRESH_BINARY);
+            MatToVector(picture.bin_array,picture.bin_image);
+            output.result_center=Rectangle(picture.image,picture.bin_array,picture.left_up_corner,picture.right_down_corner,output.result_center);
+            int length = picture.right_down_corner.x-picture.left_up_corner.x;
+            int hight = picture.right_down_corner.y-picture.left_up_corner.y;
+            if(length<0 || hight < 0) return -1;
+           else
                 {
-                    return -1;
-                }
-            else
-                {
-                    Rect ROI(picture1.left_up_corner.x,picture1.left_up_corner.y,picture1.right_down_corner.x-picture1.left_up_corner.x,picture1.right_down_corner.y-picture1.left_up_corner.y);
-                    picture1.cuted_image=picture1.image(ROI);
-                    MatToVector(picture1.cuted_array,picture1.cuted_image);
+                    Rect ROI(picture.left_up_corner.x,picture.left_up_corner.y,picture.right_down_corner.x-picture.left_up_corner.x,picture.right_down_corner.y-picture.left_up_corner.y);
+                    picture.cuted_image=picture.image(ROI);
+                    MatToVector(picture.cuted_array,picture.cuted_image);
                 }
             return 0;
 
         }
 /* Funkcja szuka prostokąta opisującego gwiazdę, zaimplementowana metoda do wykonania tej operacji potrzebuje przejść 1 raz
 * całą tablicę, jednak kilka razy musi nałożyć maskę ( dokładnie tyle razy ile mamy białych pikseli), jednak w porównianiu
-*do drugiej metody potrzebującej około 1.5 raza i tak na próbie 1000 zdjec wypada lepiej więc ostatecznie ona została
-*uznana za najbardziej wydajna
-*
-*
-*
+*do drugiej metody potrzebującej około 1.5 raza na przejscie tablicy i tak na próbie 1000 zdjec wypada lepiej więc ostatecznie ona została
+*uznana za najbardziej wydajna.
 */
 
-Point Rectangle (Mat &image, vector<short int> bin_array, Point &left_up_corner, Point &right_down_corner, Point &result_center)
+Point Rectangle (Mat &image, std::vector<short int> bin_array, Point &left_up_corner, Point &right_down_corner, Point &result_center)
 
         {
             unsigned int minrows = 0;
@@ -118,10 +113,10 @@ Point Rectangle (Mat &image, vector<short int> bin_array, Point &left_up_corner,
                 {
                     if(bin_array[i] == 255)
                         {
-                            if((i/image.cols)<maxrows) maxrows=(i/image.cols);
-                            if(i/image.cols>minrows) minrows=i/image.cols;
-                            if(i%image.cols<maxcols) maxcols=i%image.cols;
-                            if(i%image.cols>mincols) mincols=i%image.cols;
+                            if((i/image.cols)<maxrows) maxrows = (i/image.cols);
+                            if(i/image.cols>minrows) minrows = i/image.cols;
+                            if(i%image.cols<maxcols) maxcols = i%image.cols;
+                            if(i%image.cols>mincols) mincols = i%image.cols;
                         }
                 }
             swap(minrows,maxrows);
@@ -169,10 +164,10 @@ Point Rectangle (Mat &image, vector<short int> bin_array, Point &left_up_corner,
         }
 
 /*
-    Funkcja konwertuje obraz w skali szarosci do tablicy jednowymiarowej wiersz po wierszu.
+*    Funkcja konwertuje obraz w skali szarosci do tablicy jednowymiarowej wiersz po wierszu.
 */
 
-void MatToVector (vector<short int> &array, Mat &image)
+void MatToVector (std::vector<short int> &array, Mat &image)
 
         {
             if (image.isContinuous())

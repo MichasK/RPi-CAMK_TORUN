@@ -1,5 +1,7 @@
 #ifndef configuration_h
 #define configuration_h
+#include "opencv2/highgui/highgui.hpp"
+#include "opencv2/imgproc/imgproc.hpp"
     class Configuration
         {
         public:

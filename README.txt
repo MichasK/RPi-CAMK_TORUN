@@ -1,0 +1,3 @@
+Program jest uruchamiany skryptem o nazwie slit_guide jako sudo ponieważ wyniki
+jego działania zapisywane są do katalogu z serverem nginx. Jedynym koniecznym i wystarczającym
+argumentem skryptu jest ścieżka do katalogu w którym znajdują/pojawiają się zdjęcia. Skrypt zapewnia listowanie katalogu i wywołanie programu dla każdego zdjęcia, po przerobieniu wszystkich zdjęć, listuje je od nowa i tak w nieskończonej pętli. Skrypt obsługuje również działanie programu plotującego gnuplot który zapewnia rysowanie wykresów po kolejnych iteracjach. W razie pytań kontakt do autora krzyszczuk.michal@gmail.com
