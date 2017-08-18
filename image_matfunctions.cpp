@@ -46,9 +46,7 @@ double StandardDeviation (std::vector<short int> &array, double average)
 double TreshHold (double standard_deviation, double median)
 
     {
-
         return median + (6 * standard_deviation);
-
     }
 
 /*

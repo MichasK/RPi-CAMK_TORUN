@@ -21,29 +21,29 @@ extern "C"{
 */
 int main(int argc, char *argv[])
 {
-    int uart_filestream = uart_init();
+    //int uart_filestream = uart_init();
     Configuration config;
     Search_Config(argc,argv,config);
     set_config(config);
-    Picture picture;
+    Picture frame;
     OutputData output;
     stringstream result_line;//zapis wszystkich dlugosci wektorow do pliku
     int i = 1;
     while(i < argc)
         {
             string path_to_file(argv[i]);
-            picture.image=imread(argv[i],CV_LOAD_IMAGE_COLOR);
-            if(IsPhoto(path_to_file) && ~picture.image.empty())//jezeli cos jest obrazem i zostalo wczytane
+            frame.image=imread(argv[i],CV_LOAD_IMAGE_COLOR);
+            if(IsPhoto(path_to_file) && ~frame.image.empty())//jezeli cos jest obrazem i zostalo wczytane
                 {
 
-                if(PhotoEditor(picture,output)==0)
+                if(PhotoEditor(frame,output)==0)
                     {
                         result_line<<setw(5)<<left<<cv::norm(output.result_center-config.slit_center);
                         result_line<<'\t'<<'\t';
-                        Point Hough=Hough_Center(picture,output);
+                        Point Hough=Hough_Center(frame,output);
                         result_line <<setw(5)<<left<<cv::norm(Hough-config.slit_center);
                         result_line<<'\t'<<'\t';
-                        Point Weighted=WeightedCenter(picture,output);
+                        Point Weighted=WeightedCenter(frame,output);
                         result_line<<setw(5)<<left<<cv::norm(Weighted-config.slit_center);
                         result_line<<'\t'<<'\t';
                         output.result_center += Weighted + Hough;
@@ -52,10 +52,10 @@ int main(int argc, char *argv[])
                     }
                 output.vector_error = output.result_center - config.slit_center;
                 output.norm_of_vector_error = cv::norm(output.vector_error);
-                if(output.norm_of_vector_error >= config.error_treshold) write(uart_filestream,"1\n",2);
+                if(output.norm_of_vector_error >= config.error_treshold) continue;//write(uart_filestream,"1\n",2);
                 else
                     {
-                        write(uart_filestream,"3\n",2);
+                        //write(uart_filestream,"3\n",2);
                         SaveToFile(GetActualTime(),10,"/var/www/html/error_list.txt");
                     }
                 SaveToFile(result_line.str(),100,"/var/www/html/ErrorVectorNorm.txt");
@@ -63,6 +63,6 @@ int main(int argc, char *argv[])
                 }
                 i += 1;
         }
-    close(uart_filestream);
+    //close(uart_filestream);
     return 0;
 }

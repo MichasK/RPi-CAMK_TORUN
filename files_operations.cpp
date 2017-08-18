@@ -63,21 +63,19 @@ int SaveToFile (std::string message, int lines_treshold, std::string output_file
      * Funkcja jako parametr otrzymuje nazwę pliku szuka ostatniej kropki i sprawdza czy napis jest identyczny z
      * najbardziej popularnymi formatami graficznymi*
      * */
-    bool IsPhoto (std::string &file_name)
-        {
-            std::transform(file_name.begin(),file_name.end(),file_name.begin(),::tolower);
-            std::string file_extension = file_name.substr(file_name.find_last_of(".") +1,file_name.length());
-            file_name = file_name.substr(file_name.find_last_of("/")+1,file_name.length());
-            if(file_extension=="bmp" || file_extension=="jpg" || file_extension=="png" || file_extension=="jpeg")
-                return true;
-            else
-                return false;
-        }
+bool IsPhoto (std::string &file_name)
+    {
+      std::transform(file_name.begin(),file_name.end(),file_name.begin(),::tolower);
+      std::string file_extension = file_name.substr(file_name.find_last_of(".") +1,file_name.length());
+      file_name = file_name.substr(file_name.find_last_of("/")+1,file_name.length());
+      if(file_extension=="bmp" || file_extension=="jpg" || file_extension=="png" || file_extension=="jpeg") return true;
+      else return false;
+    }
 
 
-        /* Funkcja z pliku konfiguracyjnego czyta współrzedne środka szczeliny
-        *  i zapisuje je do klasy przechowującej ustawienia programu.
-        */
+/* Funkcja z pliku konfiguracyjnego czyta współrzedne środka szczeliny
+*  i zapisuje je do klasy przechowującej ustawienia programu.
+*/
 void set_config (Configuration &config)
         {
             std::vector<std::string> tab_of_lines;
@@ -103,12 +101,12 @@ void set_config (Configuration &config)
             config.slit_center.y=atoi(tab_of_lines[1].c_str());
             return;
         }
-    /*
-     *        Funkcja dostaje na wejsciu argc, tablice argv[], oraz klasę, zawierającą ustawienia programu:
-     *        -c nazwa_pliku_configuracyjnego (w nim współrzędne środka szczeliny)
-     *        -m (metoda obliczenia środka defaultowo jako średnia arytmetyczna)
-     *        -e [float] (odleglość powyżej której stwierdzamy błąd i szukamy wektora translacji)
-    */
+/*
+ *        Funkcja dostaje na wejsciu argc, tablice argv[], oraz klasę, zawierającą ustawienia programu:
+ *        -c nazwa_pliku_configuracyjnego (w nim współrzędne środka szczeliny)
+ *        -m (metoda obliczenia środka defaultowo jako średnia arytmetyczna)
+ *        -e [float] (odleglość powyżej której stwierdzamy błąd i szukamy wektora translacji)
+*/
 void Search_Config(int argc, char* argv[], Configuration &config)
         {
             for (int i=1; i<argc; i++)
