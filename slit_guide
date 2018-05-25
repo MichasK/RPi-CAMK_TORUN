@@ -1,9 +1,0 @@
-#!/bin/bash
-for((;;)); do
-    tab=($(ls $1/*.bmp))
-    for((i=0; $i<${#tab[@]};i++)); do
-        ./app ${tab[$i]} -c dane.config -e $2
-        gnuplot wykres
-    done
-done
-exit
