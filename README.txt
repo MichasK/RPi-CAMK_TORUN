@@ -2,15 +2,8 @@ Autor Krzyszczuk Michał
 kontakt: e-mail: krzyszczuk.michal@gmail.com telefon 570 295 331
 
 Slit_Guide:
-  Program zaimplementowany na potrzebę projektu "Solaris", pod kierownictwem
-  Profesor Macieja Konackiego Centrum Astronomicznego im. Mikołaja Kopernika
-  Polskiej Akademii Nauk, odział w Toruniu.
-
-  Zakładana funkcjonalność programu:
-
-
-  Zadaniem aplikacji jest detekcja środka obiektu niebieskiego(gwiazdy), na
-  podstawie zdjęć ze spektrografu BACHES, który wraz z kamerą, układem
+   Zadaniem aplikacji jest detekcja środka obiektu niebieskiego(gwiazdy), na
+  podstawie zdjęć ze spektrografu, który wraz z kamerą, układem
   mikrokontrolerów, silnikami oraz komputerem Raspberry Pi stanowi zamkniętą
   pętlę sprzężenia zwrotnego. Kamera przesyła aktualny obraz ze spektrografu
   w postaci serii zdjęć. Dzięki analizie obrazu za pomocą różnych metod
@@ -32,7 +25,4 @@ Slit_Guide:
 
 
   Planowane zmiany:
-
-
-  Rozwinięcie strony WWW obrazującej aktualne wyniki pomiarów
-  Udoskonalenie komunikacjia RPI <> AVR w celu przesyłu współrzędnych środka gwiazdy
+PROJEKT ZAWIESZONY
