@@ -7,9 +7,9 @@
 
 #include <gtest/gtest.h>
 #include <opencv2/core/mat.hpp>
-#include "../src/AstronomicFrame.hpp"
+#include "../include/AstronomicFrame.hpp"
 
-class AstoFrameTest:public ::testing::Test {
+/*class AstoFrameTest:public ::testing::Test {
 public:
     virtual void SetUp() {
         AstronomicFrame f("/home/michal/CLionProjects/SlitGuide/Frames/GuideFrame_2015_03_10_18_09_02.bmp");
@@ -20,5 +20,5 @@ public:
     virtual void TearDown() {};
     cv::Mat frame;
     std::vector<int> vecFrame;
-};
+};*/
 #endif //SLITGUIDE_ASTRONOMICFRAM_TEST_HPP

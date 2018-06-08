@@ -548,21 +548,21 @@ sys/types.h
 src/gtest-internal-inl.h
 ../lib/googletest-master/googletest/src/src/gtest-internal-inl.h
 
-/home/michal/CLionProjects/SlitGuide/lib/googletest-master/googletest/src/gtest-all.cc
+/home/michal/RPi-CAMK_TORUN/lib/googletest-master/googletest/src/gtest-all.cc
 gtest/gtest.h
-/home/michal/CLionProjects/SlitGuide/lib/googletest-master/googletest/src/gtest/gtest.h
+/home/michal/RPi-CAMK_TORUN/lib/googletest-master/googletest/src/gtest/gtest.h
 src/gtest.cc
-/home/michal/CLionProjects/SlitGuide/lib/googletest-master/googletest/src/src/gtest.cc
+/home/michal/RPi-CAMK_TORUN/lib/googletest-master/googletest/src/src/gtest.cc
 src/gtest-death-test.cc
-/home/michal/CLionProjects/SlitGuide/lib/googletest-master/googletest/src/src/gtest-death-test.cc
+/home/michal/RPi-CAMK_TORUN/lib/googletest-master/googletest/src/src/gtest-death-test.cc
 src/gtest-filepath.cc
-/home/michal/CLionProjects/SlitGuide/lib/googletest-master/googletest/src/src/gtest-filepath.cc
+/home/michal/RPi-CAMK_TORUN/lib/googletest-master/googletest/src/src/gtest-filepath.cc
 src/gtest-port.cc
-/home/michal/CLionProjects/SlitGuide/lib/googletest-master/googletest/src/src/gtest-port.cc
+/home/michal/RPi-CAMK_TORUN/lib/googletest-master/googletest/src/src/gtest-port.cc
 src/gtest-printers.cc
-/home/michal/CLionProjects/SlitGuide/lib/googletest-master/googletest/src/src/gtest-printers.cc
+/home/michal/RPi-CAMK_TORUN/lib/googletest-master/googletest/src/src/gtest-printers.cc
 src/gtest-test-part.cc
-/home/michal/CLionProjects/SlitGuide/lib/googletest-master/googletest/src/src/gtest-test-part.cc
+/home/michal/RPi-CAMK_TORUN/lib/googletest-master/googletest/src/src/gtest-test-part.cc
 src/gtest-typed-test.cc
-/home/michal/CLionProjects/SlitGuide/lib/googletest-master/googletest/src/src/gtest-typed-test.cc
+/home/michal/RPi-CAMK_TORUN/lib/googletest-master/googletest/src/src/gtest-typed-test.cc
 

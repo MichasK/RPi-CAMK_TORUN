@@ -1,21 +1,23 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
-#include "src/SearchingMethods.hpp"
+#include "include/SearchingMethods.hpp"
 
 #include <iostream>
 
-#include "src/Frame.hpp"
-#include "src/AstronomicFrame.hpp"
+#include "include/Frame.hpp"
+#include "include/AstronomicFrame.hpp"
 #include "gtest/gtest.h"
 
-int main( int argc, char** argv )
-{
+using namespace AstronomicFrame;
+
+int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     RUN_ALL_TESTS();
-    AstronomicFrame f("/home/michal/CLionProjects/SlitGuide/Frames/GuideFrame_2015_03_10_18_09_02.bmp");
-    std::function<cv::Point(AstronomicFrame)> calculate=RectangleCenter;
-    cv::Point a = calculateGuideCenter(f,calculate);
-    
-    
+    for (int i = 2; i < argc; i++) {
+        AstronomicFrame::AstronomicFrame f(std::string(argv[i]));
+        f.filtrFrame();
+    }
+
+
     return 0;
 }

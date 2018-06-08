@@ -15,14 +15,14 @@ typedef std::vector<row> Matrix;
 
 class Frame{
 protected:
-    cv::Mat frame;
+    cv::Mat data;
     std::string frameName;
 public:
     int cols;
     int rows;
     Frame(std::string);
-    Frame(cv::Mat m): frame(m),cols(m.cols),rows(m.rows){};
-    Frame(){throw std::invalid_argument("Empty frame must not be created");}
-    cv::Mat getFrame()const{ return frame;};
+    Frame(cv::Mat m): data(m),cols(m.cols),rows(m.rows){};
+    Frame(){throw std::invalid_argument("Empty data must not be created");}
+    cv::Mat getFrame()const{ return data;};
 };
 #endif //SLITGUIDE_FRAME_HPP

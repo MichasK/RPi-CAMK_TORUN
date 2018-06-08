@@ -1,24 +1,24 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/michal/CLionProjects/SlitGuide/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_d7f8d/fast"
-/usr/bin/make -f CMakeFiles/cmTC_d7f8d.dir/build.make CMakeFiles/cmTC_d7f8d.dir/build
-make[1]: Entering directory '/home/michal/CLionProjects/SlitGuide/cmake-build-debug/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_d7f8d.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_d7f8d.dir/CheckSymbolExists.c.o   -c /home/michal/CLionProjects/SlitGuide/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_d7f8d
-/home/michal/Programs/clion-2017.3.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d7f8d.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_d7f8d.dir/CheckSymbolExists.c.o  -o cmTC_d7f8d 
-CMakeFiles/cmTC_d7f8d.dir/CheckSymbolExists.c.o: In function `main':
+Run Build Command:"/usr/bin/make" "cmTC_dbe33/fast"
+/usr/bin/make -f CMakeFiles/cmTC_dbe33.dir/build.make CMakeFiles/cmTC_dbe33.dir/build
+make[1]: Entering directory '/home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_dbe33.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_dbe33.dir/CheckSymbolExists.c.o   -c /home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_dbe33
+/home/michal/Programs/clion-2017.3.3/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dbe33.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_dbe33.dir/CheckSymbolExists.c.o  -o cmTC_dbe33 
+CMakeFiles/cmTC_dbe33.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_d7f8d.dir/build.make:97: recipe for target 'cmTC_d7f8d' failed
-make[1]: *** [cmTC_d7f8d] Error 1
-make[1]: Leaving directory '/home/michal/CLionProjects/SlitGuide/cmake-build-debug/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_d7f8d/fast' failed
-make: *** [cmTC_d7f8d/fast] Error 2
+CMakeFiles/cmTC_dbe33.dir/build.make:97: recipe for target 'cmTC_dbe33' failed
+make[1]: *** [cmTC_dbe33] Error 1
+make[1]: Leaving directory '/home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_dbe33/fast' failed
+make: *** [cmTC_dbe33/fast] Error 2
 
-File /home/michal/CLionProjects/SlitGuide/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 

@@ -6,9 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/michal/CLionProjects/SlitGuide/src/uart.c
-uart.h
-/home/michal/CLionProjects/SlitGuide/src/uart.h
+../include/uart.h
+time.h
+-
+
+/home/michal/RPi-CAMK_TORUN/src/uart.c
 stdio.h
 -
 stdlib.h
@@ -24,11 +26,7 @@ fcntl.h
 termios.h
 -
 uart.h
-/home/michal/CLionProjects/SlitGuide/src/uart.h
-time.h
--
-
-/home/michal/CLionProjects/SlitGuide/src/uart.h
+/home/michal/RPi-CAMK_TORUN/src/uart.h
 time.h
 -
 

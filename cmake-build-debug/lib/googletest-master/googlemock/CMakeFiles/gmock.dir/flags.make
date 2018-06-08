@@ -6,5 +6,5 @@ CXX_FLAGS = -g    -Wall -Wshadow -Werror -DGTEST_HAS_PTHREAD=1 -fexceptions -Wex
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/michal/CLionProjects/SlitGuide/lib/googletest-master/googlemock/include -I/home/michal/CLionProjects/SlitGuide/lib/googletest-master/googlemock -isystem /home/michal/CLionProjects/SlitGuide/lib/googletest-master/googletest/include -I/home/michal/CLionProjects/SlitGuide/lib/googletest-master/googletest 
+CXX_INCLUDES = -I/home/michal/RPi-CAMK_TORUN/lib/googletest-master/googlemock/include -I/home/michal/RPi-CAMK_TORUN/lib/googletest-master/googlemock -isystem /home/michal/RPi-CAMK_TORUN/lib/googletest-master/googletest/include -I/home/michal/RPi-CAMK_TORUN/lib/googletest-master/googletest 
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/michal/CLionProjects/SlitGuide/lib/googletest-master/googlemock
+# Install script for directory: /home/michal/RPi-CAMK_TORUN/lib/googletest-master/googlemock
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -33,27 +33,27 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/michal/CLionProjects/SlitGuide/cmake-build-debug/lib/googletest-master/googlemock/libgmockd.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/michal/RPi-CAMK_TORUN/cmake-build-debug/lib/googletest-master/googlemock/libgmockd.a")
 endif()
 
 if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/michal/CLionProjects/SlitGuide/cmake-build-debug/lib/googletest-master/googlemock/libgmock_maind.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/michal/RPi-CAMK_TORUN/cmake-build-debug/lib/googletest-master/googlemock/libgmock_maind.a")
 endif()
 
 if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/michal/CLionProjects/SlitGuide/lib/googletest-master/googlemock/include/gmock")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/michal/RPi-CAMK_TORUN/lib/googletest-master/googlemock/include/gmock")
 endif()
 
 if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES
-    "/home/michal/CLionProjects/SlitGuide/cmake-build-debug/gmock.pc"
-    "/home/michal/CLionProjects/SlitGuide/cmake-build-debug/gmock_main.pc"
+    "/home/michal/RPi-CAMK_TORUN/cmake-build-debug/gmock.pc"
+    "/home/michal/RPi-CAMK_TORUN/cmake-build-debug/gmock_main.pc"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/michal/CLionProjects/SlitGuide/cmake-build-debug/lib/googletest-master/googlemock/gtest/cmake_install.cmake")
+  include("/home/michal/RPi-CAMK_TORUN/cmake-build-debug/lib/googletest-master/googlemock/gtest/cmake_install.cmake")
 
 endif()
 

@@ -43,10 +43,10 @@ RM = /home/michal/Programs/clion-2017.3.3/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/michal/CLionProjects/SlitGuide
+CMAKE_SOURCE_DIR = /home/michal/RPi-CAMK_TORUN
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/michal/CLionProjects/SlitGuide/cmake-build-debug
+CMAKE_BINARY_DIR = /home/michal/RPi-CAMK_TORUN/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/SlitGuide.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/SlitGuide.dir/flags.make
 
 CMakeFiles/SlitGuide.dir/main.cpp.o: CMakeFiles/SlitGuide.dir/flags.make
 CMakeFiles/SlitGuide.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/CLionProjects/SlitGuide/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SlitGuide.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SlitGuide.dir/main.cpp.o -c /home/michal/CLionProjects/SlitGuide/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SlitGuide.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SlitGuide.dir/main.cpp.o -c /home/michal/RPi-CAMK_TORUN/main.cpp
 
 CMakeFiles/SlitGuide.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SlitGuide.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/michal/CLionProjects/SlitGuide/main.cpp > CMakeFiles/SlitGuide.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/michal/RPi-CAMK_TORUN/main.cpp > CMakeFiles/SlitGuide.dir/main.cpp.i
 
 CMakeFiles/SlitGuide.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SlitGuide.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/michal/CLionProjects/SlitGuide/main.cpp -o CMakeFiles/SlitGuide.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/michal/RPi-CAMK_TORUN/main.cpp -o CMakeFiles/SlitGuide.dir/main.cpp.s
 
 CMakeFiles/SlitGuide.dir/main.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/SlitGuide.dir/main.cpp.o.provides.build: CMakeFiles/SlitGuide.dir/mai
 
 CMakeFiles/SlitGuide.dir/src/Frame.cpp.o: CMakeFiles/SlitGuide.dir/flags.make
 CMakeFiles/SlitGuide.dir/src/Frame.cpp.o: ../src/Frame.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/CLionProjects/SlitGuide/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SlitGuide.dir/src/Frame.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SlitGuide.dir/src/Frame.cpp.o -c /home/michal/CLionProjects/SlitGuide/src/Frame.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SlitGuide.dir/src/Frame.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SlitGuide.dir/src/Frame.cpp.o -c /home/michal/RPi-CAMK_TORUN/src/Frame.cpp
 
 CMakeFiles/SlitGuide.dir/src/Frame.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SlitGuide.dir/src/Frame.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/michal/CLionProjects/SlitGuide/src/Frame.cpp > CMakeFiles/SlitGuide.dir/src/Frame.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/michal/RPi-CAMK_TORUN/src/Frame.cpp > CMakeFiles/SlitGuide.dir/src/Frame.cpp.i
 
 CMakeFiles/SlitGuide.dir/src/Frame.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SlitGuide.dir/src/Frame.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/michal/CLionProjects/SlitGuide/src/Frame.cpp -o CMakeFiles/SlitGuide.dir/src/Frame.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/michal/RPi-CAMK_TORUN/src/Frame.cpp -o CMakeFiles/SlitGuide.dir/src/Frame.cpp.s
 
 CMakeFiles/SlitGuide.dir/src/Frame.cpp.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/SlitGuide.dir/src/Frame.cpp.o.provides.build: CMakeFiles/SlitGuide.di
 
 CMakeFiles/SlitGuide.dir/src/AstronomicFrame.cpp.o: CMakeFiles/SlitGuide.dir/flags.make
 CMakeFiles/SlitGuide.dir/src/AstronomicFrame.cpp.o: ../src/AstronomicFrame.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/CLionProjects/SlitGuide/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SlitGuide.dir/src/AstronomicFrame.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SlitGuide.dir/src/AstronomicFrame.cpp.o -c /home/michal/CLionProjects/SlitGuide/src/AstronomicFrame.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SlitGuide.dir/src/AstronomicFrame.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SlitGuide.dir/src/AstronomicFrame.cpp.o -c /home/michal/RPi-CAMK_TORUN/src/AstronomicFrame.cpp
 
 CMakeFiles/SlitGuide.dir/src/AstronomicFrame.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SlitGuide.dir/src/AstronomicFrame.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/michal/CLionProjects/SlitGuide/src/AstronomicFrame.cpp > CMakeFiles/SlitGuide.dir/src/AstronomicFrame.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/michal/RPi-CAMK_TORUN/src/AstronomicFrame.cpp > CMakeFiles/SlitGuide.dir/src/AstronomicFrame.cpp.i
 
 CMakeFiles/SlitGuide.dir/src/AstronomicFrame.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SlitGuide.dir/src/AstronomicFrame.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/michal/CLionProjects/SlitGuide/src/AstronomicFrame.cpp -o CMakeFiles/SlitGuide.dir/src/AstronomicFrame.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/michal/RPi-CAMK_TORUN/src/AstronomicFrame.cpp -o CMakeFiles/SlitGuide.dir/src/AstronomicFrame.cpp.s
 
 CMakeFiles/SlitGuide.dir/src/AstronomicFrame.cpp.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/SlitGuide.dir/src/AstronomicFrame.cpp.o.provides.build: CMakeFiles/Sl
 
 CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.o: CMakeFiles/SlitGuide.dir/flags.make
 CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.o: ../test/AstronomicFram_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/CLionProjects/SlitGuide/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.o -c /home/michal/CLionProjects/SlitGuide/test/AstronomicFram_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.o -c /home/michal/RPi-CAMK_TORUN/test/AstronomicFram_test.cpp
 
 CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/michal/CLionProjects/SlitGuide/test/AstronomicFram_test.cpp > CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/michal/RPi-CAMK_TORUN/test/AstronomicFram_test.cpp > CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.i
 
 CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/michal/CLionProjects/SlitGuide/test/AstronomicFram_test.cpp -o CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/michal/RPi-CAMK_TORUN/test/AstronomicFram_test.cpp -o CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.s
 
 CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.o.requires:
 
@@ -155,16 +155,16 @@ CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.o.provides.build: CMakeFil
 
 CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o: CMakeFiles/SlitGuide.dir/flags.make
 CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o: ../src/SearchingMethods.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/CLionProjects/SlitGuide/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o -c /home/michal/CLionProjects/SlitGuide/src/SearchingMethods.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o -c /home/michal/RPi-CAMK_TORUN/src/SearchingMethods.cpp
 
 CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/michal/CLionProjects/SlitGuide/src/SearchingMethods.cpp > CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/michal/RPi-CAMK_TORUN/src/SearchingMethods.cpp > CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.i
 
 CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/michal/CLionProjects/SlitGuide/src/SearchingMethods.cpp -o CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/michal/RPi-CAMK_TORUN/src/SearchingMethods.cpp -o CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.s
 
 CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o.requires:
 
@@ -179,16 +179,16 @@ CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o.provides.build: CMakeFiles/S
 
 CMakeFiles/SlitGuide.dir/src/uart.c.o: CMakeFiles/SlitGuide.dir/flags.make
 CMakeFiles/SlitGuide.dir/src/uart.c.o: ../src/uart.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/CLionProjects/SlitGuide/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/SlitGuide.dir/src/uart.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SlitGuide.dir/src/uart.c.o   -c /home/michal/CLionProjects/SlitGuide/src/uart.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/SlitGuide.dir/src/uart.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SlitGuide.dir/src/uart.c.o   -c /home/michal/RPi-CAMK_TORUN/src/uart.c
 
 CMakeFiles/SlitGuide.dir/src/uart.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/SlitGuide.dir/src/uart.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/michal/CLionProjects/SlitGuide/src/uart.c > CMakeFiles/SlitGuide.dir/src/uart.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/michal/RPi-CAMK_TORUN/src/uart.c > CMakeFiles/SlitGuide.dir/src/uart.c.i
 
 CMakeFiles/SlitGuide.dir/src/uart.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/SlitGuide.dir/src/uart.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/michal/CLionProjects/SlitGuide/src/uart.c -o CMakeFiles/SlitGuide.dir/src/uart.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/michal/RPi-CAMK_TORUN/src/uart.c -o CMakeFiles/SlitGuide.dir/src/uart.c.s
 
 CMakeFiles/SlitGuide.dir/src/uart.c.o.requires:
 
@@ -265,7 +265,7 @@ SlitGuide: /usr/local/lib/libopencv_objdetect.so.3.4.0
 SlitGuide: /usr/local/lib/libopencv_imgproc.so.3.4.0
 SlitGuide: /usr/local/lib/libopencv_core.so.3.4.0
 SlitGuide: CMakeFiles/SlitGuide.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/michal/CLionProjects/SlitGuide/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable SlitGuide"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable SlitGuide"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SlitGuide.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -287,6 +287,6 @@ CMakeFiles/SlitGuide.dir/clean:
 .PHONY : CMakeFiles/SlitGuide.dir/clean
 
 CMakeFiles/SlitGuide.dir/depend:
-	cd /home/michal/CLionProjects/SlitGuide/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/michal/CLionProjects/SlitGuide /home/michal/CLionProjects/SlitGuide /home/michal/CLionProjects/SlitGuide/cmake-build-debug /home/michal/CLionProjects/SlitGuide/cmake-build-debug /home/michal/CLionProjects/SlitGuide/cmake-build-debug/CMakeFiles/SlitGuide.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/michal/RPi-CAMK_TORUN/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/michal/RPi-CAMK_TORUN /home/michal/RPi-CAMK_TORUN /home/michal/RPi-CAMK_TORUN/cmake-build-debug /home/michal/RPi-CAMK_TORUN/cmake-build-debug /home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles/SlitGuide.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/SlitGuide.dir/depend
 

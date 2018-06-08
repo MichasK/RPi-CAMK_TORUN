@@ -1,4 +1,4 @@
-# Install script for directory: /home/michal/CLionProjects/SlitGuide/lib/googletest-master
+# Install script for directory: /home/michal/RPi-CAMK_TORUN/lib/googletest-master
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/michal/CLionProjects/SlitGuide/cmake-build-debug/lib/googletest-master/googlemock/cmake_install.cmake")
+  include("/home/michal/RPi-CAMK_TORUN/cmake-build-debug/lib/googletest-master/googlemock/cmake_install.cmake")
 
 endif()
 

@@ -2,7 +2,7 @@
 // Created by michal on 15.03.18.
 //
 
-#include "uart.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
