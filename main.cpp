@@ -8,14 +8,17 @@
 #include "include/AstronomicFrame.hpp"
 #include "gtest/gtest.h"
 
-using namespace AstronomicFrame;
+using namespace Astronomic;
 
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     RUN_ALL_TESTS();
     for (int i = 2; i < argc; i++) {
-        AstronomicFrame::AstronomicFrame f(std::string(argv[i]));
-        f.filtrFrame();
+        Astronomic::AstronomicFrame frame(std::string(argv[i]));
+        auto binary_f = frame.ToBinary();
+        Astronomic::AstronomicFrame filled_frame(binary_f);
+        auto x = Astronomic::fillFrame(binary_f);
+
     }
 
 

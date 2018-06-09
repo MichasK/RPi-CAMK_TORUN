@@ -12,8 +12,8 @@
 /*class AstoFrameTest:public ::testing::Test {
 public:
     virtual void SetUp() {
-        AstronomicFrame f("/home/michal/CLionProjects/SlitGuide/Frames/GuideFrame_2015_03_10_18_09_02.bmp");
-        f.filtrFrame();
+        Astronomic f("/home/michal/CLionProjects/SlitGuide/Frames/GuideFrame_2015_03_10_18_09_02.bmp");
+        f.ToBinary();
         frame = f.getFrame();
         vecFrame = f.getvecFrame();
     }
