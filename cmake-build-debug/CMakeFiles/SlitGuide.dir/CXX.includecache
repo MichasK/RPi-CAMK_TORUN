@@ -6,29 +6,9 @@
 
 #IncludeRegexTransform: 
 
-../include/AstronomicFrame.hpp
-Frame.hpp
-../include/Frame.hpp
-opencv/cv.hpp
--
-
-../include/Frame.hpp
-opencv/cv.hpp
--
-vector
--
-string
--
-exception
--
-
-../include/SearchingMethods.hpp
+../include/CenterSearchingMethods.hpp
 opencv2/core/types.hpp
 -
-opencv2/core/mat.hpp
--
-AstronomicFrame.hpp
-../include/AstronomicFrame.hpp
 
 ../lib/googletest-master/googletest/include/gtest/gtest-death-test.h
 gtest/internal/gtest-death-test-internal.h
@@ -324,21 +304,11 @@ string
 exception
 -
 
-/home/michal/RPi-CAMK_TORUN/include/SearchingMethods.hpp
-opencv2/core/types.hpp
--
-opencv2/core/mat.hpp
--
-AstronomicFrame.hpp
-/home/michal/RPi-CAMK_TORUN/include/AstronomicFrame.hpp
-
 /home/michal/RPi-CAMK_TORUN/main.cpp
 opencv2/core/core.hpp
 -
 opencv2/highgui/highgui.hpp
 -
-include/SearchingMethods.hpp
-/home/michal/RPi-CAMK_TORUN/include/SearchingMethods.hpp
 iostream
 -
 include/Frame.hpp
@@ -347,11 +317,25 @@ include/AstronomicFrame.hpp
 /home/michal/RPi-CAMK_TORUN/include/AstronomicFrame.hpp
 gtest/gtest.h
 /home/michal/RPi-CAMK_TORUN/gtest/gtest.h
+CenterSearchingMethods.hpp
+/home/michal/RPi-CAMK_TORUN/CenterSearchingMethods.hpp
 
 /home/michal/RPi-CAMK_TORUN/src/AstronomicFrame.cpp
 ../include/AstronomicFrame.hpp
 /home/michal/RPi-CAMK_TORUN/include/AstronomicFrame.hpp
 opencv2/highgui/highgui.hpp
+-
+iostream
+-
+
+/home/michal/RPi-CAMK_TORUN/src/CenterSearchingMethods.cpp
+opencv2/imgproc/types_c.h
+-
+opencv/cv.hpp
+-
+CenterSearchingMethods.hpp
+/home/michal/RPi-CAMK_TORUN/src/CenterSearchingMethods.hpp
+exception
 -
 iostream
 -
@@ -371,8 +355,6 @@ opencv2/imgproc/imgproc.hpp
 /home/michal/RPi-CAMK_TORUN/src/opencv2/imgproc/imgproc.hpp
 opencv2/highgui/highgui.hpp
 /home/michal/RPi-CAMK_TORUN/src/opencv2/highgui/highgui.hpp
-SearchingMethods.hpp
-/home/michal/RPi-CAMK_TORUN/src/SearchingMethods.hpp
 iostream
 -
 

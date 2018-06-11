@@ -3,8 +3,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/SlitGuide.dir/src/Frame.cpp.o"
   "CMakeFiles/SlitGuide.dir/src/AstronomicFrame.cpp.o"
   "CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.o"
-  "CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o"
   "CMakeFiles/SlitGuide.dir/src/uart.c.o"
+  "CMakeFiles/SlitGuide.dir/src/CenterSearchingMethods.cpp.o"
+  "CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o"
   "SlitGuide.pdb"
   "SlitGuide"
 )

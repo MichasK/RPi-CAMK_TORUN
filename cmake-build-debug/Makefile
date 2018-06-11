@@ -275,6 +275,33 @@ src/AstronomicFrame.cpp.s:
 	$(MAKE) -f CMakeFiles/SlitGuide.dir/build.make CMakeFiles/SlitGuide.dir/src/AstronomicFrame.cpp.s
 .PHONY : src/AstronomicFrame.cpp.s
 
+src/CenterSearchingMethods.o: src/CenterSearchingMethods.cpp.o
+
+.PHONY : src/CenterSearchingMethods.o
+
+# target to build an object file
+src/CenterSearchingMethods.cpp.o:
+	$(MAKE) -f CMakeFiles/SlitGuide.dir/build.make CMakeFiles/SlitGuide.dir/src/CenterSearchingMethods.cpp.o
+.PHONY : src/CenterSearchingMethods.cpp.o
+
+src/CenterSearchingMethods.i: src/CenterSearchingMethods.cpp.i
+
+.PHONY : src/CenterSearchingMethods.i
+
+# target to preprocess a source file
+src/CenterSearchingMethods.cpp.i:
+	$(MAKE) -f CMakeFiles/SlitGuide.dir/build.make CMakeFiles/SlitGuide.dir/src/CenterSearchingMethods.cpp.i
+.PHONY : src/CenterSearchingMethods.cpp.i
+
+src/CenterSearchingMethods.s: src/CenterSearchingMethods.cpp.s
+
+.PHONY : src/CenterSearchingMethods.s
+
+# target to generate assembly for a file
+src/CenterSearchingMethods.cpp.s:
+	$(MAKE) -f CMakeFiles/SlitGuide.dir/build.make CMakeFiles/SlitGuide.dir/src/CenterSearchingMethods.cpp.s
+.PHONY : src/CenterSearchingMethods.cpp.s
+
 src/Frame.o: src/Frame.cpp.o
 
 .PHONY : src/Frame.o
@@ -406,6 +433,9 @@ help:
 	@echo "... src/AstronomicFrame.o"
 	@echo "... src/AstronomicFrame.i"
 	@echo "... src/AstronomicFrame.s"
+	@echo "... src/CenterSearchingMethods.o"
+	@echo "... src/CenterSearchingMethods.i"
+	@echo "... src/CenterSearchingMethods.s"
 	@echo "... src/Frame.o"
 	@echo "... src/Frame.i"
 	@echo "... src/Frame.s"

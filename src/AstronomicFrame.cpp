@@ -20,7 +20,7 @@ namespace Astronomic {
         return array;
     }
 
-    cv::Mat addSlitMask(const cv::Mat &frame) {
+    cv::Mat addSlit(const cv::Mat &frame) {
         auto _frame = frame;
         for (auto i = LEFT_UP_SLIT_CORD.x; i < RIGHT_DOWN_SLIT_CORD.x; i++) {
             for (auto j = LEFT_UP_SLIT_CORD.y; j < RIGHT_DOWN_SLIT_CORD.y; j++) _frame.at<uchar>(i, j) = 255;
@@ -56,12 +56,10 @@ namespace Astronomic {
     }
 
     AstronomicFrame fillFrame(const cv::Mat frame) {
-        auto tmp = addSlitMask(frame);
-        int morph_size = 3;
-
-        cv::namedWindow("Display window", cv::WINDOW_NORMAL);// Create a window for display.
-        cv::imshow("Display window", tmp);
-        cv::waitKey(0);
+        auto tmp = addSlit(frame);
+        const int KERNEL_SIZE = 5;
+        auto kernel = cv::getStructuringElement(cv::MORPH_ELLIPSE,cv::Size(KERNEL_SIZE,KERNEL_SIZE));
+        cv::dilate(frame,tmp,kernel);
         return AstronomicFrame(tmp);
 
     }

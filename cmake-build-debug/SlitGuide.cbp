@@ -360,22 +360,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/michal/RPi-CAMK_TORUN">
+		<Unit filename="/home/michal/RPi-CAMK_TORUN/include/AstronomicFrame.hpp">
 			<Option target="SlitGuide"/>
 		</Unit>
-		<Unit filename="/home/michal/RPi-CAMK_TORUN/include/AstronomicFrame.hpp">
+		<Unit filename="/home/michal/RPi-CAMK_TORUN/include/CenterSearchingMethods.hpp">
 			<Option target="SlitGuide"/>
 		</Unit>
 		<Unit filename="/home/michal/RPi-CAMK_TORUN/include/Frame.hpp">
 			<Option target="SlitGuide"/>
 		</Unit>
 		<Unit filename="/home/michal/RPi-CAMK_TORUN/include/FrameData.hpp">
-			<Option target="SlitGuide"/>
-		</Unit>
-		<Unit filename="/home/michal/RPi-CAMK_TORUN/include/SearchingMethods.hpp">
-			<Option target="SlitGuide"/>
-		</Unit>
-		<Unit filename="/home/michal/RPi-CAMK_TORUN/include/helpers.hpp">
 			<Option target="SlitGuide"/>
 		</Unit>
 		<Unit filename="/home/michal/RPi-CAMK_TORUN/include/uart.h">
@@ -400,6 +394,9 @@
 			<Option target="SlitGuide"/>
 		</Unit>
 		<Unit filename="/home/michal/RPi-CAMK_TORUN/src/AstronomicFrame.cpp">
+			<Option target="SlitGuide"/>
+		</Unit>
+		<Unit filename="/home/michal/RPi-CAMK_TORUN/src/CenterSearchingMethods.cpp">
 			<Option target="SlitGuide"/>
 		</Unit>
 		<Unit filename="/home/michal/RPi-CAMK_TORUN/src/Frame.cpp">

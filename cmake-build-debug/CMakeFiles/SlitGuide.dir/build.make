@@ -153,33 +153,9 @@ CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.o.provides: CMakeFiles/Sli
 CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.o.provides.build: CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.o
 
 
-CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o: CMakeFiles/SlitGuide.dir/flags.make
-CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o: ../src/SearchingMethods.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o -c /home/michal/RPi-CAMK_TORUN/src/SearchingMethods.cpp
-
-CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/michal/RPi-CAMK_TORUN/src/SearchingMethods.cpp > CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.i
-
-CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/michal/RPi-CAMK_TORUN/src/SearchingMethods.cpp -o CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.s
-
-CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o.requires:
-
-.PHONY : CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o.requires
-
-CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o.provides: CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o.requires
-	$(MAKE) -f CMakeFiles/SlitGuide.dir/build.make CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o.provides.build
-.PHONY : CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o.provides
-
-CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o.provides.build: CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o
-
-
 CMakeFiles/SlitGuide.dir/src/uart.c.o: CMakeFiles/SlitGuide.dir/flags.make
 CMakeFiles/SlitGuide.dir/src/uart.c.o: ../src/uart.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/SlitGuide.dir/src/uart.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/SlitGuide.dir/src/uart.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/SlitGuide.dir/src/uart.c.o   -c /home/michal/RPi-CAMK_TORUN/src/uart.c
 
 CMakeFiles/SlitGuide.dir/src/uart.c.i: cmake_force
@@ -201,14 +177,63 @@ CMakeFiles/SlitGuide.dir/src/uart.c.o.provides: CMakeFiles/SlitGuide.dir/src/uar
 CMakeFiles/SlitGuide.dir/src/uart.c.o.provides.build: CMakeFiles/SlitGuide.dir/src/uart.c.o
 
 
+CMakeFiles/SlitGuide.dir/src/CenterSearchingMethods.cpp.o: CMakeFiles/SlitGuide.dir/flags.make
+CMakeFiles/SlitGuide.dir/src/CenterSearchingMethods.cpp.o: ../src/CenterSearchingMethods.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SlitGuide.dir/src/CenterSearchingMethods.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SlitGuide.dir/src/CenterSearchingMethods.cpp.o -c /home/michal/RPi-CAMK_TORUN/src/CenterSearchingMethods.cpp
+
+CMakeFiles/SlitGuide.dir/src/CenterSearchingMethods.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SlitGuide.dir/src/CenterSearchingMethods.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/michal/RPi-CAMK_TORUN/src/CenterSearchingMethods.cpp > CMakeFiles/SlitGuide.dir/src/CenterSearchingMethods.cpp.i
+
+CMakeFiles/SlitGuide.dir/src/CenterSearchingMethods.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SlitGuide.dir/src/CenterSearchingMethods.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/michal/RPi-CAMK_TORUN/src/CenterSearchingMethods.cpp -o CMakeFiles/SlitGuide.dir/src/CenterSearchingMethods.cpp.s
+
+CMakeFiles/SlitGuide.dir/src/CenterSearchingMethods.cpp.o.requires:
+
+.PHONY : CMakeFiles/SlitGuide.dir/src/CenterSearchingMethods.cpp.o.requires
+
+CMakeFiles/SlitGuide.dir/src/CenterSearchingMethods.cpp.o.provides: CMakeFiles/SlitGuide.dir/src/CenterSearchingMethods.cpp.o.requires
+	$(MAKE) -f CMakeFiles/SlitGuide.dir/build.make CMakeFiles/SlitGuide.dir/src/CenterSearchingMethods.cpp.o.provides.build
+.PHONY : CMakeFiles/SlitGuide.dir/src/CenterSearchingMethods.cpp.o.provides
+
+CMakeFiles/SlitGuide.dir/src/CenterSearchingMethods.cpp.o.provides.build: CMakeFiles/SlitGuide.dir/src/CenterSearchingMethods.cpp.o
+
+
+CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o: CMakeFiles/SlitGuide.dir/flags.make
+CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o: ../src/SearchingMethods.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o -c /home/michal/RPi-CAMK_TORUN/src/SearchingMethods.cpp
+
+CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/michal/RPi-CAMK_TORUN/src/SearchingMethods.cpp > CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.i
+
+CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/michal/RPi-CAMK_TORUN/src/SearchingMethods.cpp -o CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.s
+
+CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o.requires:
+
+.PHONY : CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o.requires
+
+CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o.provides: CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o.requires
+	$(MAKE) -f CMakeFiles/SlitGuide.dir/build.make CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o.provides.build
+.PHONY : CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o.provides
+
+CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o.provides.build: CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o
+
+
 # Object files for target SlitGuide
 SlitGuide_OBJECTS = \
 "CMakeFiles/SlitGuide.dir/main.cpp.o" \
 "CMakeFiles/SlitGuide.dir/src/Frame.cpp.o" \
 "CMakeFiles/SlitGuide.dir/src/AstronomicFrame.cpp.o" \
 "CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.o" \
-"CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o" \
-"CMakeFiles/SlitGuide.dir/src/uart.c.o"
+"CMakeFiles/SlitGuide.dir/src/uart.c.o" \
+"CMakeFiles/SlitGuide.dir/src/CenterSearchingMethods.cpp.o" \
+"CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o"
 
 # External object files for target SlitGuide
 SlitGuide_EXTERNAL_OBJECTS =
@@ -217,8 +242,9 @@ SlitGuide: CMakeFiles/SlitGuide.dir/main.cpp.o
 SlitGuide: CMakeFiles/SlitGuide.dir/src/Frame.cpp.o
 SlitGuide: CMakeFiles/SlitGuide.dir/src/AstronomicFrame.cpp.o
 SlitGuide: CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.o
-SlitGuide: CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o
 SlitGuide: CMakeFiles/SlitGuide.dir/src/uart.c.o
+SlitGuide: CMakeFiles/SlitGuide.dir/src/CenterSearchingMethods.cpp.o
+SlitGuide: CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o
 SlitGuide: CMakeFiles/SlitGuide.dir/build.make
 SlitGuide: /usr/local/lib/libopencv_stitching.so.3.4.0
 SlitGuide: /usr/local/lib/libopencv_superres.so.3.4.0
@@ -265,7 +291,7 @@ SlitGuide: /usr/local/lib/libopencv_objdetect.so.3.4.0
 SlitGuide: /usr/local/lib/libopencv_imgproc.so.3.4.0
 SlitGuide: /usr/local/lib/libopencv_core.so.3.4.0
 SlitGuide: CMakeFiles/SlitGuide.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable SlitGuide"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable SlitGuide"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SlitGuide.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -277,8 +303,9 @@ CMakeFiles/SlitGuide.dir/requires: CMakeFiles/SlitGuide.dir/main.cpp.o.requires
 CMakeFiles/SlitGuide.dir/requires: CMakeFiles/SlitGuide.dir/src/Frame.cpp.o.requires
 CMakeFiles/SlitGuide.dir/requires: CMakeFiles/SlitGuide.dir/src/AstronomicFrame.cpp.o.requires
 CMakeFiles/SlitGuide.dir/requires: CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.o.requires
-CMakeFiles/SlitGuide.dir/requires: CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o.requires
 CMakeFiles/SlitGuide.dir/requires: CMakeFiles/SlitGuide.dir/src/uart.c.o.requires
+CMakeFiles/SlitGuide.dir/requires: CMakeFiles/SlitGuide.dir/src/CenterSearchingMethods.cpp.o.requires
+CMakeFiles/SlitGuide.dir/requires: CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o.requires
 
 .PHONY : CMakeFiles/SlitGuide.dir/requires
 

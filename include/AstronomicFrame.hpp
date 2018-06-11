@@ -19,12 +19,9 @@ public:
     AstronomicFrame(std::string s):Frame(s){};
     AstronomicFrame(cv::Mat m):Frame(m){};
     cv::Mat ToBinary();
-
-
-
 };
     double calcTreshold(const std::vector<uchar>&,float);
-    cv::Mat addSlitMask(const cv::Mat&);
+    cv::Mat addSlit(const cv::Mat &);
     AstronomicFrame fillFrame(const cv::Mat);
 }
 

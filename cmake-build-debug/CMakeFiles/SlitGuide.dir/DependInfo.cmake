@@ -20,6 +20,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/michal/RPi-CAMK_TORUN/main.cpp" "/home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles/SlitGuide.dir/main.cpp.o"
   "/home/michal/RPi-CAMK_TORUN/src/AstronomicFrame.cpp" "/home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles/SlitGuide.dir/src/AstronomicFrame.cpp.o"
+  "/home/michal/RPi-CAMK_TORUN/src/CenterSearchingMethods.cpp" "/home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles/SlitGuide.dir/src/CenterSearchingMethods.cpp.o"
   "/home/michal/RPi-CAMK_TORUN/src/Frame.cpp" "/home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles/SlitGuide.dir/src/Frame.cpp.o"
   "/home/michal/RPi-CAMK_TORUN/src/SearchingMethods.cpp" "/home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o"
   "/home/michal/RPi-CAMK_TORUN/test/AstronomicFram_test.cpp" "/home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.o"

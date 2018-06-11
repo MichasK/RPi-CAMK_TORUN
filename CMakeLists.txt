@@ -8,11 +8,11 @@ add_subdirectory(lib/googletest-master)
 include_directories(lib/googletest-master/googletest/include)
 include_directories(lib/googletest-master/googlemock/include)
 include_directories(include)
-set(SOURCE_FILES main.cpp src/Frame.cpp  src/AstronomicFrame.cpp src test/AstronomicFram_test.cpp  src/SearchingMethods.cpp src/ src/uart.c )
+set(SOURCE_FILES main.cpp src/Frame.cpp  src/AstronomicFrame.cpp src test/AstronomicFram_test.cpp  src/uart.c src/CenterSearchingMethods.cpp)
 
 
 
-set(HEADERS_FILES include/Frame.hpp include/FrameData.hpp include/SearchingMethods.hpp include/uart.h include/AstronomicFrame.hpp include/helpers.hpp)
+set(HEADERS_FILES include/Frame.hpp include/FrameData.hpp include/uart.h include/AstronomicFrame.hpp include/CenterSearchingMethods.hpp)
 
 
 file(GLOB TEST_SOURCES test/*.cpp)
