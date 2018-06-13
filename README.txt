@@ -24,5 +24,3 @@ Slit_Guide:
   obrazowania aktualnych wyników pomiaru.
 
 
-  Planowane zmiany:
-PROJEKT ZAWIESZONY
