@@ -23,7 +23,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/michal/RPi-CAMK_TORUN/src/CenterSearchingMethods.cpp" "/home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles/SlitGuide.dir/src/CenterSearchingMethods.cpp.o"
   "/home/michal/RPi-CAMK_TORUN/src/Frame.cpp" "/home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles/SlitGuide.dir/src/Frame.cpp.o"
   "/home/michal/RPi-CAMK_TORUN/src/SearchingMethods.cpp" "/home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles/SlitGuide.dir/src/SearchingMethods.cpp.o"
-  "/home/michal/RPi-CAMK_TORUN/test/AstronomicFram_test.cpp" "/home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.o"
+  "/home/michal/RPi-CAMK_TORUN/test/AstronomicFrameTest.cpp" "/home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles/SlitGuide.dir/test/AstronomicFrameTest.cpp.o"
+  "/home/michal/RPi-CAMK_TORUN/test/FrameTest.cpp" "/home/michal/RPi-CAMK_TORUN/cmake-build-debug/CMakeFiles/SlitGuide.dir/test/FrameTest.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

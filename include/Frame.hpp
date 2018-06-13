@@ -18,10 +18,8 @@ protected:
     cv::Mat data;
     std::string frameName;
 public:
-    int cols;
-    int rows;
     Frame(std::string);
-    Frame(cv::Mat m): data(m),cols(m.cols),rows(m.rows){};
+    Frame(cv::Mat m): data(m){};
     Frame(){throw std::invalid_argument("Empty data must not be created");}
     cv::Mat getFrame()const{ return data;};
 };

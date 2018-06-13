@@ -43,7 +43,7 @@ namespace Astronomic {
         return treshold;
     }
 
-    cv::Mat AstronomicFrame::ToBinary() {
+    AstronomicFrame AstronomicFrame::Frame2Binary() const {
         auto frameData = Mat2Vec(data);
         auto th = calcTreshold(frameData, 3);
         cv::Mat blurredAFrame;
@@ -51,7 +51,7 @@ namespace Astronomic {
         cv::Mat binary;
         cv::threshold(data, binary, th, 255, cv::THRESH_BINARY);
         cv::medianBlur(binary, binary, 3);
-        return binary;
+        return AstronomicFrame(binary);
 
     }
 

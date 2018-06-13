@@ -18,11 +18,12 @@ private:
 public:
     AstronomicFrame(std::string s):Frame(s){};
     AstronomicFrame(cv::Mat m):Frame(m){};
-    cv::Mat ToBinary();
+    AstronomicFrame Frame2Binary()const;
 };
     double calcTreshold(const std::vector<uchar>&,float);
     cv::Mat addSlit(const cv::Mat &);
     AstronomicFrame fillFrame(const cv::Mat);
+    std::vector<uchar> Mat2Vec(const cv::Mat);
 }
 
 #endif //SLITGUIDE_ASTRONOMICFRAME_HPP

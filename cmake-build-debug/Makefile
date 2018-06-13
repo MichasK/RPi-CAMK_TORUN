@@ -383,32 +383,59 @@ src/uart.c.s:
 	$(MAKE) -f CMakeFiles/SlitGuide.dir/build.make CMakeFiles/SlitGuide.dir/src/uart.c.s
 .PHONY : src/uart.c.s
 
-test/AstronomicFram_test.o: test/AstronomicFram_test.cpp.o
+test/AstronomicFrameTest.o: test/AstronomicFrameTest.cpp.o
 
-.PHONY : test/AstronomicFram_test.o
+.PHONY : test/AstronomicFrameTest.o
 
 # target to build an object file
-test/AstronomicFram_test.cpp.o:
-	$(MAKE) -f CMakeFiles/SlitGuide.dir/build.make CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.o
-.PHONY : test/AstronomicFram_test.cpp.o
+test/AstronomicFrameTest.cpp.o:
+	$(MAKE) -f CMakeFiles/SlitGuide.dir/build.make CMakeFiles/SlitGuide.dir/test/AstronomicFrameTest.cpp.o
+.PHONY : test/AstronomicFrameTest.cpp.o
 
-test/AstronomicFram_test.i: test/AstronomicFram_test.cpp.i
+test/AstronomicFrameTest.i: test/AstronomicFrameTest.cpp.i
 
-.PHONY : test/AstronomicFram_test.i
+.PHONY : test/AstronomicFrameTest.i
 
 # target to preprocess a source file
-test/AstronomicFram_test.cpp.i:
-	$(MAKE) -f CMakeFiles/SlitGuide.dir/build.make CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.i
-.PHONY : test/AstronomicFram_test.cpp.i
+test/AstronomicFrameTest.cpp.i:
+	$(MAKE) -f CMakeFiles/SlitGuide.dir/build.make CMakeFiles/SlitGuide.dir/test/AstronomicFrameTest.cpp.i
+.PHONY : test/AstronomicFrameTest.cpp.i
 
-test/AstronomicFram_test.s: test/AstronomicFram_test.cpp.s
+test/AstronomicFrameTest.s: test/AstronomicFrameTest.cpp.s
 
-.PHONY : test/AstronomicFram_test.s
+.PHONY : test/AstronomicFrameTest.s
 
 # target to generate assembly for a file
-test/AstronomicFram_test.cpp.s:
-	$(MAKE) -f CMakeFiles/SlitGuide.dir/build.make CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.s
-.PHONY : test/AstronomicFram_test.cpp.s
+test/AstronomicFrameTest.cpp.s:
+	$(MAKE) -f CMakeFiles/SlitGuide.dir/build.make CMakeFiles/SlitGuide.dir/test/AstronomicFrameTest.cpp.s
+.PHONY : test/AstronomicFrameTest.cpp.s
+
+test/FrameTest.o: test/FrameTest.cpp.o
+
+.PHONY : test/FrameTest.o
+
+# target to build an object file
+test/FrameTest.cpp.o:
+	$(MAKE) -f CMakeFiles/SlitGuide.dir/build.make CMakeFiles/SlitGuide.dir/test/FrameTest.cpp.o
+.PHONY : test/FrameTest.cpp.o
+
+test/FrameTest.i: test/FrameTest.cpp.i
+
+.PHONY : test/FrameTest.i
+
+# target to preprocess a source file
+test/FrameTest.cpp.i:
+	$(MAKE) -f CMakeFiles/SlitGuide.dir/build.make CMakeFiles/SlitGuide.dir/test/FrameTest.cpp.i
+.PHONY : test/FrameTest.cpp.i
+
+test/FrameTest.s: test/FrameTest.cpp.s
+
+.PHONY : test/FrameTest.s
+
+# target to generate assembly for a file
+test/FrameTest.cpp.s:
+	$(MAKE) -f CMakeFiles/SlitGuide.dir/build.make CMakeFiles/SlitGuide.dir/test/FrameTest.cpp.s
+.PHONY : test/FrameTest.cpp.s
 
 # Help Target
 help:
@@ -445,9 +472,12 @@ help:
 	@echo "... src/uart.o"
 	@echo "... src/uart.i"
 	@echo "... src/uart.s"
-	@echo "... test/AstronomicFram_test.o"
-	@echo "... test/AstronomicFram_test.i"
-	@echo "... test/AstronomicFram_test.s"
+	@echo "... test/AstronomicFrameTest.o"
+	@echo "... test/AstronomicFrameTest.i"
+	@echo "... test/AstronomicFrameTest.s"
+	@echo "... test/FrameTest.o"
+	@echo "... test/FrameTest.i"
+	@echo "... test/FrameTest.s"
 .PHONY : help
 
 

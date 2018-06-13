@@ -369,9 +369,6 @@
 		<Unit filename="/home/michal/RPi-CAMK_TORUN/include/Frame.hpp">
 			<Option target="SlitGuide"/>
 		</Unit>
-		<Unit filename="/home/michal/RPi-CAMK_TORUN/include/FrameData.hpp">
-			<Option target="SlitGuide"/>
-		</Unit>
 		<Unit filename="/home/michal/RPi-CAMK_TORUN/include/uart.h">
 			<Option target="SlitGuide"/>
 		</Unit>
@@ -408,10 +405,16 @@
 		<Unit filename="/home/michal/RPi-CAMK_TORUN/src/uart.c">
 			<Option target="SlitGuide"/>
 		</Unit>
-		<Unit filename="/home/michal/RPi-CAMK_TORUN/test/AstronomicFram_test.cpp">
+		<Unit filename="/home/michal/RPi-CAMK_TORUN/test/AstronomicFrameTest.cpp">
 			<Option target="SlitGuide"/>
 		</Unit>
-		<Unit filename="/home/michal/RPi-CAMK_TORUN/test/AstronomicFram_test.hpp">
+		<Unit filename="/home/michal/RPi-CAMK_TORUN/test/AstronomicFrameTest.hpp">
+			<Option target="SlitGuide"/>
+		</Unit>
+		<Unit filename="/home/michal/RPi-CAMK_TORUN/test/FrameTest.cpp">
+			<Option target="SlitGuide"/>
+		</Unit>
+		<Unit filename="/home/michal/RPi-CAMK_TORUN/test/FrameTest.hpp">
 			<Option target="SlitGuide"/>
 		</Unit>
 		<Unit filename="/home/michal/RPi-CAMK_TORUN/CMakeLists.txt">

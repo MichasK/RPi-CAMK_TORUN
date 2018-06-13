@@ -13,9 +13,9 @@ using namespace Astronomic;
 int main(int argc, char **argv) {
     ::testing::InitGoogleTest(&argc, argv);
     RUN_ALL_TESTS();
-    for (int i = 2; i < argc; i++) {
+    /*for (int i = 2; i < argc; i++) {
         Astronomic::AstronomicFrame frame(std::string(argv[i]));
-        auto binary_f = frame.ToBinary();
+        auto binary_f = frame.Frame2Binary();
         auto filled = Astronomic::fillFrame(binary_f);
         auto tlo = cv::imread(argv[i]);
         auto x = CenterSearchingMethods::HoughCenter(filled.getFrame());
@@ -28,7 +28,7 @@ int main(int argc, char **argv) {
         cv::waitKey(0);
 
 
-    }
+    }*/
 
 
     return 0;

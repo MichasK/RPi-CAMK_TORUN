@@ -1,8 +1,0 @@
-/home/michal/RPi-CAMK_TORUN/Frames
-/home/michal/RPi-CAMK_TORUN/Frames/arg.txt
-/home/michal/RPi-CAMK_TORUN/Frames/3.bmp
-/home/michal/RPi-CAMK_TORUN/Frames/5.bmp
-/home/michal/RPi-CAMK_TORUN/Frames/1.bmp
-/home/michal/RPi-CAMK_TORUN/Frames/2.bmp
-/home/michal/RPi-CAMK_TORUN/Frames/4.bmp
-/home/michal/RPi-CAMK_TORUN/Frames/6.bmp

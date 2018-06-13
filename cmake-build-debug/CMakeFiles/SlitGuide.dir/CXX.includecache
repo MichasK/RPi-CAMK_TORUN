@@ -6,8 +6,24 @@
 
 #IncludeRegexTransform: 
 
+../include/AstronomicFrame.hpp
+Frame.hpp
+../include/Frame.hpp
+opencv/cv.hpp
+-
+
 ../include/CenterSearchingMethods.hpp
 opencv2/core/types.hpp
+-
+
+../include/Frame.hpp
+opencv/cv.hpp
+-
+vector
+-
+string
+-
+exception
 -
 
 ../lib/googletest-master/googletest/include/gtest/gtest-death-test.h
@@ -358,25 +374,25 @@ opencv2/highgui/highgui.hpp
 iostream
 -
 
-/home/michal/RPi-CAMK_TORUN/test/AstronomicFram_test.cpp
-AstronomicFram_test.hpp
-/home/michal/RPi-CAMK_TORUN/test/AstronomicFram_test.hpp
+/home/michal/RPi-CAMK_TORUN/test/AstronomicFrameTest.cpp
+AstronomicFrameTest.hpp
+/home/michal/RPi-CAMK_TORUN/test/AstronomicFrameTest.hpp
+
+/home/michal/RPi-CAMK_TORUN/test/AstronomicFrameTest.hpp
 gtest/gtest.h
 /home/michal/RPi-CAMK_TORUN/test/gtest/gtest.h
-opencv2/core/core.hpp
--
-opencv2/highgui/highgui.hpp
--
-numeric
--
+AstronomicFrame.hpp
+/home/michal/RPi-CAMK_TORUN/test/AstronomicFrame.hpp
 
-/home/michal/RPi-CAMK_TORUN/test/AstronomicFram_test.hpp
+/home/michal/RPi-CAMK_TORUN/test/FrameTest.cpp
+FrameTest.hpp
+/home/michal/RPi-CAMK_TORUN/test/FrameTest.hpp
+
+/home/michal/RPi-CAMK_TORUN/test/FrameTest.hpp
 gtest/gtest.h
--
-opencv2/core/mat.hpp
--
-../include/AstronomicFrame.hpp
-/home/michal/RPi-CAMK_TORUN/include/AstronomicFrame.hpp
+/home/michal/RPi-CAMK_TORUN/test/gtest/gtest.h
+Frame.hpp
+/home/michal/RPi-CAMK_TORUN/test/Frame.hpp
 
 /usr/local/include/opencv/cv.h
 opencv2/core/core_c.h
