@@ -16,13 +16,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a02c005-7049-4411-ba4d-70fa3b504c39" name="Default" comment="Works in test">
-      <change beforePath="" afterPath="$PROJECT_DIR$/test/AstronomicFrameTest.cpp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test/AstronomicFrameTest.hpp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test/FrameTest.cpp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/test/FrameTest.hpp" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change beforePath="$PROJECT_DIR$/Frames/arg.txt" afterPath="" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SlitGuide.dir/CXX.includecache" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SlitGuide.dir/CXX.includecache" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SlitGuide.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SlitGuide.dir/DependInfo.cmake" />
@@ -35,7 +29,6 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SlitGuide.dir/progress.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SlitGuide.dir/progress.make" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SlitGuide.dir/src/AstronomicFrame.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SlitGuide.dir/src/AstronomicFrame.cpp.o" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SlitGuide.dir/src/Frame.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SlitGuide.dir/src/Frame.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/SlitGuide.dir/test/AstronomicFram_test.cpp.o" afterPath="" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/SlitGuide" afterPath="$PROJECT_DIR$/cmake-build-debug/SlitGuide" />
@@ -44,13 +37,6 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/progress.make" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/CMakeFiles/gmock_main.dir/progress.make" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/gtest/CMakeFiles/gtest.dir/progress.make" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/gtest/CMakeFiles/gtest.dir/progress.make" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/gtest/CMakeFiles/gtest_main.dir/progress.make" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/googletest-master/googlemock/gtest/CMakeFiles/gtest_main.dir/progress.make" />
-      <change beforePath="$PROJECT_DIR$/include/AstronomicFrame.hpp" afterPath="$PROJECT_DIR$/include/AstronomicFrame.hpp" />
-      <change beforePath="$PROJECT_DIR$/include/Frame.hpp" afterPath="$PROJECT_DIR$/include/Frame.hpp" />
-      <change beforePath="$PROJECT_DIR$/include/FrameData.hpp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/AstronomicFrame.cpp" afterPath="$PROJECT_DIR$/src/AstronomicFrame.cpp" />
-      <change beforePath="$PROJECT_DIR$/test/AstronomicFram_test.cpp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/test/AstronomicFram_test.hpp" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -308,12 +294,20 @@
       <workItem from="1528536099140" duration="5017000" />
       <workItem from="1528712675038" duration="9807000" />
       <workItem from="1528726443345" duration="2132000" />
-      <workItem from="1528918277743" duration="6041000" />
+      <workItem from="1528918277743" duration="6114000" />
     </task>
+    <task id="LOCAL-00001" summary="Works in test">
+      <created>1528926218758</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1528926218758</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30038000" />
+    <option name="totallyTimeSpent" value="30111000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="0" width="1920" height="1044" extended-state="6" />
